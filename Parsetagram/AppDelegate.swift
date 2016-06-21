@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Initialize Parse
+        // Set applicationId and server based on the values in the Heroku settings.
+        // clientKey is not used on Parse open source unless explicitly configured
+        Parse.initializeWithConfiguration(
+            ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
+                configuration.applicationId = "parsetagram"
+                configuration.clientKey = "9m3nui3039lamFFGAJnaje73b2i2laai"  // set to nil assuming you have not set clientKey
+                configuration.server = "https://serene-river-11975.herokuapp.com/parse"
+            })
+        )
+        
+        // check if user is logged in.
+        
+        if PFUser.currentUser() != nil {
+            // if there is a logged in user then load the home view controller
+            //Use the navigation controller because it contains the tab bar controller and leads to the homeView (storyboard of ID) of the HomeViewController
+            let loggedInViewController = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("appNavigation")
+            self.window?.rootViewController = loggedInViewController
+            print("The user was already logged in, we are in the home view controller")
+        }
+        
         return true
     }
+    
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
