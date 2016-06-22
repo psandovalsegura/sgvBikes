@@ -90,6 +90,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         
         let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
+        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) in
             if error == nil {
