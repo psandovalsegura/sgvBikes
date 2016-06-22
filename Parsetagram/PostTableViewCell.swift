@@ -10,13 +10,12 @@ import UIKit
 
 class PostTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var likesLabel: UILabel!
-    @IBOutlet weak var commentsLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel! // "author"
+    @IBOutlet weak var postImageView: UIImageView! //"media"
+    @IBOutlet weak var likesLabel: UILabel! // "likesCount"
+    @IBOutlet weak var commentsLabel: UILabel! //"commentsCount"
     
-    
-    //
+    @IBOutlet weak var captionLabel: UILabel! // "caption"
     
     override func awakeFromNib() {
         super.awakeFromNib()

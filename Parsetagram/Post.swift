@@ -27,10 +27,15 @@ class Post: NSObject {
         
         // Add relevant fields to the object
         post["media"] = getPFFileFromImage(image) // PFFile column type
-        post["author"] = PFUser.currentUser() // Pointer column type that points to PFUser
+        post["author"] = PFUser.currentUser()// Pointer column type that points to PFUser
         post["caption"] = caption
         post["likesCount"] = 0
         post["commentsCount"] = 0
+        
+        //Make username
+        //post["username"]
+        let usernameString = post["author"].username!!
+        post["username"] = usernameString
         
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)

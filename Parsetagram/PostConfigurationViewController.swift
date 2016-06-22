@@ -11,13 +11,18 @@ import Parse
 
 class PostConfigurationViewController: UIViewController {
     
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     var imageTaken: UIImage? = nil
 
+    @IBOutlet weak var captionField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        imageView.image = imageTaken
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +30,24 @@ class PostConfigurationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onUpload(sender: AnyObject) {
+        
+        Post.postUserImage(imageTaken, withCaption: captionField.text) { (success: Bool, error: NSError?) in
+            //Add MBProgressBar
+        }
+        
+        print("Upload by \(PFUser.currentUser()?.username)")
+        self.performSegueWithIdentifier("uploadToHomeSegue", sender: nil)
+    }
+    
+    @IBAction func onCancel(sender: AnyObject) {
+        self.performSegueWithIdentifier("cancelToHomeSegue", sender: nil)
+    }
 
+    @IBAction func onTap(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+    
     /*
     // MARK: - Navigation
 

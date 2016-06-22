@@ -73,6 +73,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let postConfigurationViewController = segue.destinationViewController as! PostConfigurationViewController
         postConfigurationViewController.imageTaken = self.imageTaken
+        
     }
     
 
