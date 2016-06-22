@@ -48,11 +48,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.insertSubview(refreshControl, atIndex: 0)
         loadPostData("viewDidLoad")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
@@ -167,6 +162,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // immediately.  Any code that depends on the query result should be moved
         // inside the completion block above.
     
+    //Post Cell Deselection -  not handled by table view
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let path = tableView.indexPathForSelectedRow {
+            
+            tableView.deselectRowAtIndexPath(path, animated: true)
+        }
+    }
     
     // MARK: - Navigation
 
