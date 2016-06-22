@@ -37,7 +37,7 @@ class Post: NSObject {
         post["username"] = usernameString
         
         //Add a date and time of creation in processable format
-        post["dateString"] = TimeAid.getFormattedDate()
+        post["formattedDateString"] = TimeAid.getFormattedDate()
         
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)

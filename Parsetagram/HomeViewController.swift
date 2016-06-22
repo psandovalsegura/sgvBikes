@@ -167,14 +167,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // immediately.  Any code that depends on the query result should be moved
         // inside the completion block above.
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toFullDetailView", let detailVC = segue.destinationViewController as? PostDetailViewController, postIndex = tableView.indexPathForSelectedRow?.row {
+            detailVC.post = self.posts[postIndex]
+        }
     }
-    */
+ 
 
 }

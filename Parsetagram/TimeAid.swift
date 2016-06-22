@@ -50,6 +50,21 @@ class TimeAid {
         return currentDateString
     }
     
+    
+    /* Returns a string of the date in the format: Ex. "Jun 21, 2016, 9:40 PM" 
+       Receiving a string in the format: "yyyy-MM-dd HH:mm:ss" 
+     */
+    static func getReadableDateFromFormat(formattedDate: String) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let tryingDate = dateFormatter.dateFromString(formattedDate)!
+        
+        let timestamp = NSDateFormatter.localizedStringFromDate(tryingDate, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        return timestamp
+    }
+    
     /* Credit for getTimestamp() function to Scott Gardner on Stack Overflow: http://stackoverflow.com/questions/24070450/how-to-get-the-current-time-and-hour-as-datetime
         
      Output string format example: Jun 21, 2016, 9:40 PM

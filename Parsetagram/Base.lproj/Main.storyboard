@@ -198,7 +198,7 @@
                                             <outlet property="likesLabel" destination="Zbb-Cd-kyM" id="0k0-kf-J1D"/>
                                             <outlet property="postImageView" destination="SE5-FC-V6f" id="nfs-5B-Hpy"/>
                                             <outlet property="usernameLabel" destination="DuA-Fu-3OM" id="gAZ-nZ-GQE"/>
-                                            <segue destination="YIj-cE-Q0H" kind="show" id="Ag5-jP-UGe"/>
+                                            <segue destination="YIj-cE-Q0H" kind="show" identifier="toFullDetailView" id="Ag5-jP-UGe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2L-bj-QBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1892.5" y="385.5"/>
+            <point key="canvasLocation" x="1977.5" y="384.5"/>
         </scene>
         <!--Post Detail View Controller-->
         <scene sceneID="QbL-4N-6qI">
@@ -228,13 +228,69 @@
                     <view key="view" contentMode="scaleToFill" id="eif-E1-AyO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lAt-9r-fyu">
+                                <rect key="frame" x="0.0" y="124" width="375" height="298"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYs-GC-3xp">
+                                <rect key="frame" x="0.0" y="430" width="375" height="74"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date taken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpk-mi-v3G">
+                                        <rect key="frame" x="8" y="8" width="199" height="29"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hk-4L-vQT">
+                                        <rect key="frame" x="182" y="8" width="185" height="29"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xY9-5t-qJp">
+                                        <rect key="frame" x="182" y="37" width="185" height="29"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1215686275" green="0.61568627450000002" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zio-XE-fhR">
+                                <rect key="frame" x="0.0" y="526" width="375" height="106"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUQ-V6-re8">
+                                        <rect key="frame" x="8" y="8" width="359" height="90"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.35686274509803922" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABq-9g-vW2" userLabel="usernameLabel">
+                                <rect key="frame" x="0.0" y="64" width="375" height="52"/>
+                                <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="captionLabel" destination="qUQ-V6-re8" id="iev-EZ-HgY"/>
+                        <outlet property="dateTakenLabel" destination="zpk-mi-v3G" id="gEP-4R-gkh"/>
+                        <outlet property="daysAgoLabel" destination="3hk-4L-vQT" id="5de-Ya-SOW"/>
+                        <outlet property="imageView" destination="lAt-9r-fyu" id="9Zf-LY-Ozh"/>
+                        <outlet property="likesLabel" destination="xY9-5t-qJp" id="jeX-aO-N6Z"/>
+                        <outlet property="usernameLabel" destination="ABq-9g-vW2" id="TF8-jL-MGI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tz-He-350" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2392.5" y="385.5"/>
+            <point key="canvasLocation" x="2525.5" y="384.5"/>
         </scene>
         <!--Me-->
         <scene sceneID="m9N-4a-Lcd">
@@ -314,7 +370,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODd-15-pEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356.5" y="385.5"/>
+            <point key="canvasLocation" x="1392" y="385"/>
         </scene>
         <!--Me-->
         <scene sceneID="P6s-VA-m8C">
