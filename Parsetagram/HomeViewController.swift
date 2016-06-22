@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshControl.addTarget(self, action: #selector(loadPostData(_:)), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.backgroundColor = UIColor.clearColor()
         refreshControl.tintColor = UIColor.blackColor()
-        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         tableView.insertSubview(refreshControl, atIndex: 0)
         loadPostData("normal")
     }

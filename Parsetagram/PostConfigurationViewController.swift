@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
 
 class PostConfigurationViewController: UIViewController {
     
@@ -31,9 +32,11 @@ class PostConfigurationViewController: UIViewController {
     }
     
     @IBAction func onUpload(sender: AnyObject) {
+        //Start progress HUD
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
         Post.postUserImage(imageTaken, withCaption: captionField.text) { (success: Bool, error: NSError?) in
-            //Add MBProgressBar
+        
         }
         
         print("Upload by \(PFUser.currentUser()?.username)")
@@ -46,6 +49,13 @@ class PostConfigurationViewController: UIViewController {
 
     @IBAction func onTap(sender: AnyObject) {
         self.view.endEditing(true)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+        
+        //End progress HUD, which began in onUpload()
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
     }
     
     /*
