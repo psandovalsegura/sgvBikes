@@ -10,11 +10,13 @@ import UIKit
 import Parse
 import MBProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl = UIRefreshControl()
+    var isMoreDataLoading = false
+    var loadingMoreView:InfiniteScrollActivityView?
     var posts = [PFObject]()
     
     
@@ -25,6 +27,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         
+        // Set up Infinite Scroll loading indicator
+        let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.hidden = true
+        tableView.addSubview(loadingMoreView!)
+        
+        var insets = tableView.contentInset;
+        insets.bottom += InfiniteScrollActivityView.defaultHeight;
+        tableView.contentInset = insets
+        
         // Do any additional setup after loading the view.
         //Initially load data
         self.loadPostData("initial")
@@ -32,9 +44,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshControl.addTarget(self, action: #selector(loadPostData(_:)), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.backgroundColor = UIColor.clearColor()
         refreshControl.tintColor = UIColor.blackColor()
-        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
+        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         tableView.insertSubview(refreshControl, atIndex: 0)
-        loadPostData("normal")
+        loadPostData("viewDidLoad")
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,50 +95,78 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        // Handle scroll behavior here
+        if (!isMoreDataLoading) {
+            
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+                isMoreDataLoading = true
+                
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+                
+                //Load more results ...
+                loadPostData("scrollViewDidScroll")
+            }
+            
+        }
+    }
+    
     func loadPostData(point: AnyObject) {
-        let query = PFQuery(className: "Post")
-        query.orderByDescending("createdAt")
-        
+        //ProgressHUD initialized
         if (String(point) == "initial") {
             // Display HUD right before the request is made
-            //print("initial request to load")
+            print("initial request to load")
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         }
+        
+        let query = PFQuery(className: "Post")
+        query.orderByDescending("createdAt")
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) in
             if error == nil {
                 
                 //print("successfully retreived")
+                
+                // Update flag
+                self.isMoreDataLoading = false
+                // Stop the loading indicator
+                self.loadingMoreView!.stopAnimating()
+                
                 if let objects = objects {
                     self.posts = objects
                     self.tableView.reloadData()
                 }
-                } else {
-                    //print("there was an error")
-                }
-        }
-        
-        if (String(point) == "initial") {
-            // Hide HUD once the network request comes back (must be done on main UI thread)
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
+                
+            } else {
+                //print("there was an error")
+            }
         }
         
         //Stop refesh control
         self.refreshControl.endRefreshing()
         
-        //print(self.posts.count)
+        /*for number in 0 ..< 1000000 { //Slow the app
+            print(number)
+        }*/
+        
+        if (String(point) == "initial") {
+            // Hide HUD once the network request comes back (must be done on main UI thread)
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            print("end initial request to load")
+        }
     }
         // The getObjectInBackgroundWithId methods are asynchronous, so any code after this will run
         // immediately.  Any code that depends on the query result should be moved
         // inside the completion block above.
     
-    
-    /* Credit for this function to Scott Gardner on Stack Overflow: http://stackoverflow.com/questions/24070450/how-to-get-the-current-time-and-hour-as-datetime */
-    func getTimestamp() -> String{
-        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
-        return timestamp
-    }
-
     /*
     // MARK: - Navigation
 

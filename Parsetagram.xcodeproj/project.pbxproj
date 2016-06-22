@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4CEF783643CE61CAECEBA85A /* Pods_ParsetagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A7626C7D280A72765CB4B /* Pods_ParsetagramUITests.framework */; };
+		9B313F121D1A34F700F99561 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */; };
+		9B313F191D1A4D1500F99561 /* TimeAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F181D1A4D1500F99561 /* TimeAid.swift */; };
 		9B70FEC61D18BA5A00D65E58 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */; };
 		9BAB5E841D18FB830001A178 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E831D18FB830001A178 /* MeViewController.swift */; };
 		9BAB5E861D1911210001A178 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E851D1911210001A178 /* PostDetailViewController.swift */; };
@@ -49,6 +51,8 @@
 		63EF1E35136D13006C2855B6 /* Pods-Parsetagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parsetagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parsetagram/Pods-Parsetagram.release.xcconfig"; sourceTree = "<group>"; };
 		6556373A395946CC9C72CE84 /* Pods-Parsetagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parsetagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parsetagram/Pods-Parsetagram.debug.xcconfig"; sourceTree = "<group>"; };
 		8EE1C82B97D72A8D85C8D3DF /* Pods-ParsetagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsetagramUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParsetagramUITests/Pods-ParsetagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
+		9B313F181D1A4D1500F99561 /* TimeAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAid.swift; sourceTree = "<group>"; };
 		9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		9BAB5E831D18FB830001A178 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		9BAB5E851D1911210001A178 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */,
+				9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 		9BECE3171D18404B001C61F1 /* Parsetagram */ = {
 			isa = PBXGroup;
 			children = (
+				9B313F181D1A4D1500F99561 /* TimeAid.swift */,
 				9BAB5E891D1991120001A178 /* Models */,
 				9B70FEC41D18BA3900D65E58 /* View Controllers */,
 				9B70FEC31D18BA2900D65E58 /* Views */,
@@ -473,6 +479,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B313F121D1A34F700F99561 /* InfiniteScrollActivityView.swift in Sources */,
+				9B313F191D1A4D1500F99561 /* TimeAid.swift in Sources */,
 				9BAB5E841D18FB830001A178 /* MeViewController.swift in Sources */,
 				9BAB5E861D1911210001A178 /* PostDetailViewController.swift in Sources */,
 				9BECE3471D184872001C61F1 /* LoginViewController.swift in Sources */,

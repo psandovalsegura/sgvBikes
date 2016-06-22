@@ -14,10 +14,13 @@ class PostConfigurationViewController: UIViewController {
     
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var captionField: UITextField!
     
     var imageTaken: UIImage? = nil
-
-    @IBOutlet weak var captionField: UITextField!
+    
+    //Constants for use in resizing image
+    let IMAGE_VIEW_WIDTH = 335
+    let IMAGE_VIEW_HEIGHT = 261
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +35,17 @@ class PostConfigurationViewController: UIViewController {
     }
     
     @IBAction func onUpload(sender: AnyObject) {
-        //Start progress HUD
+        //Start progress HUD, ends in viewDidDisappear()
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        Post.postUserImage(imageTaken, withCaption: captionField.text) { (success: Bool, error: NSError?) in
-        
+        //Resize image in preparation for upload
+        let resizedImage = resize(self.imageTaken!, newSize: CGSize(width: IMAGE_VIEW_WIDTH, height: IMAGE_VIEW_HEIGHT))
+        Post.postUserImage(resizedImage, withCaption: captionField.text) { (success: Bool, error: NSError?) in
+            //What code is handled here?
         }
+        
+        //End progress HUD, which began in onUpload()
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
         
         print("Upload by \(PFUser.currentUser()?.username)")
         self.performSegueWithIdentifier("uploadToHomeSegue", sender: nil)
@@ -49,6 +57,18 @@ class PostConfigurationViewController: UIViewController {
 
     @IBAction func onTap(sender: AnyObject) {
         self.view.endEditing(true)
+    }
+    
+    func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
     
     override func viewDidDisappear(animated: Bool) {

@@ -32,10 +32,12 @@ class Post: NSObject {
         post["likesCount"] = 0
         post["commentsCount"] = 0
         
-        //Make username
-        //post["username"]
+        //Add username
         let usernameString = post["author"].username!!
         post["username"] = usernameString
+        
+        //Add a date and time of creation in processable format
+        post["dateString"] = TimeAid.getFormattedDate()
         
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)
