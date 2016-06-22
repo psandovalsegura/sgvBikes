@@ -14,7 +14,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,9 +28,15 @@ class LoginViewController: UIViewController {
     @IBAction func onSignIn(sender: AnyObject) {
         PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                print("Login success.")
+                print("By: LoginViewController.swift \n --------> Login success.")
+
                 //Manually segue
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
+            } else {
+                //Animate an alert for ERROR
+                let errorString = error!.userInfo["error"] as? String
+                self.errorAlert(errorString!)
+                
             }
         }
         
@@ -44,15 +49,22 @@ class LoginViewController: UIViewController {
         
         newUser.signUpInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
             if success {
-                print("Created a user!")
+                print("By: LoginViewController.swift \n --------> Created a user!")
                 //Manually segue
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
+                ParseUser.createUser(withCompletion: { (success: Bool, error: NSError?) in
+                    //
+                })
             } else {
+                //Animate an alert for ERROR
+                let errorString = error!.userInfo["error"] as? String
+                self.errorAlert(errorString!)
+                /*
                 print(error?.localizedDescription)
                 print("Error code: \(error?.code)")
-                if error?.code == 202 {
+                if error?.code == 202 {                     //Modify this snippet to produce better alerts
                     print("Username is taken")
-                }
+                }*/
             }
         }
     }
@@ -61,6 +73,16 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
 
+    func errorAlert(errorString: String) {
+        let alertController = UIAlertController(title:"Error",  message: errorString, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title:"OK", style: .Cancel) { (action) in
+            //code is run when user chooses cancel
+        }
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true) {
+            //optional code that is run after the alert has finished presenting
+        }
+    }
     /*
     // MARK: - Navigation
 

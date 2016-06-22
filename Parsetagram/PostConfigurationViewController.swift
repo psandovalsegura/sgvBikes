@@ -41,13 +41,11 @@ class PostConfigurationViewController: UIViewController {
         //Resize image in preparation for upload
         let resizedImage = resize(self.imageTaken!, newSize: CGSize(width: IMAGE_VIEW_WIDTH, height: IMAGE_VIEW_HEIGHT))
         Post.postUserImage(resizedImage, withCaption: captionField.text) { (success: Bool, error: NSError?) in
-            //What code is handled here?
+            ///End progress HUD
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
         }
         
-        //End progress HUD, which began in onUpload()
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
-        
-        print("Upload by \(PFUser.currentUser()?.username)")
+        print("By: PostConfigurationViewController.swift \n --------> Upload by \(PFUser.currentUser()?.username)")
         self.performSegueWithIdentifier("uploadToHomeSegue", sender: nil)
     }
     

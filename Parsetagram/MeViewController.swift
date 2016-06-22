@@ -84,13 +84,14 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         //ProgressHUD initialized
         if (String(point) == "initial") {
             // Display HUD right before the request is made
-            print("initial request to load")
+            print("By: MeViewController.swift \n --------> initial request to load")
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         }
         
         let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
         query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        //query.whereKey("_p_author", equalTo: <#T##AnyObject#>) //try this query for safety in better release
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) in
             if error == nil {
@@ -117,7 +118,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         if (String(point) == "initial") {
             // Hide HUD once the network request comes back (must be done on main UI thread)
             MBProgressHUD.hideHUDForView(self.view, animated: true)
-            print("end initial request to load")
+            print("By: MeViewController.swift \n --------> end initial request to load")
         }
     }
 

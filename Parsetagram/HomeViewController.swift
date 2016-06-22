@@ -41,12 +41,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Initially load data
         self.loadPostData("initial")
         
+        //Refresh control setup
         refreshControl.addTarget(self, action: #selector(loadPostData(_:)), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.backgroundColor = UIColor.clearColor()
         refreshControl.tintColor = UIColor.blackColor()
         refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         tableView.insertSubview(refreshControl, atIndex: 0)
+        
         loadPostData("viewDidLoad")
+        
+        //First create ParseUser object
+        //In testing, first must create a ParseUser object
+        //UserInstance.loadUser()
+        //print("By: HomeViewController.swift \n --------> \(UserInstance.CURRENT_USER["username"] as! String) ")
+        
+        //print("By: HomeViewController.swift \n --------> \(PFUser.currentUser()?.objectId)")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,7 +127,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //ProgressHUD initialized
         if (String(point) == "initial") {
             // Display HUD right before the request is made
-            print("initial request to load")
+            print("By: HomeViewController.swift \n --------> initial request to load")
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         }
         
@@ -143,20 +152,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             } else {
                 //print("there was an error")
             }
+            
+            if (String(point) == "initial") {
+                // Hide HUD once the network request comes back (must be done on main UI thread)
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                print("By: HomeViewController.swift \n --------> end initial request to load")
+            }
+            
+            //Stop refesh control
+            self.refreshControl.endRefreshing()
         }
-        
-        //Stop refesh control
-        self.refreshControl.endRefreshing()
         
         /*for number in 0 ..< 1000000 { //Slow the app
             print(number)
         }*/
         
-        if (String(point) == "initial") {
-            // Hide HUD once the network request comes back (must be done on main UI thread)
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
-            print("end initial request to load")
-        }
     }
         // The getObjectInBackgroundWithId methods are asynchronous, so any code after this will run
         // immediately.  Any code that depends on the query result should be moved
