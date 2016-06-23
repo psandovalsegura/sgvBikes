@@ -97,6 +97,9 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 
             }
             
+            //Get amount of days ago
+            cell.daysAgoLabel.text = TimeAid.getFeedTimeDifference((post["formattedDateString"] as! String))
+            
         }
         
         return cell

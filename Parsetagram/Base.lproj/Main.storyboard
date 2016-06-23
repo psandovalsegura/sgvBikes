@@ -195,6 +195,15 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UtI-Kw-skd">
                                                             <rect key="frame" x="18" y="3" width="50" height="50"/>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="## d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sR-Tt-NMf">
+                                                            <rect key="frame" x="291" y="0.0" width="84" height="56"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="96v-qT-1H4">
+                                                            <rect key="frame" x="269" y="12" width="35" height="31"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.16862745100000001" green="0.52156862749999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
@@ -203,7 +212,9 @@
                                         <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="captionLabel" destination="a7T-tc-lWo" id="XJM-Ix-SIS"/>
+                                            <outlet property="clockImageView" destination="96v-qT-1H4" id="q6j-4a-vMA"/>
                                             <outlet property="commentsLabel" destination="KYT-eP-oHX" id="Fw4-ac-Ys1"/>
+                                            <outlet property="daysAgoLabel" destination="8sR-Tt-NMf" id="pQB-hL-m8D"/>
                                             <outlet property="likesLabel" destination="Zbb-Cd-kyM" id="0k0-kf-J1D"/>
                                             <outlet property="postImageView" destination="SE5-FC-V6f" id="nfs-5B-Hpy"/>
                                             <outlet property="profilePictureView" destination="UtI-Kw-skd" id="o3C-cr-b7F"/>
@@ -364,8 +375,17 @@
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="## d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD0-mW-229">
+                                                            <rect key="frame" x="309" y="0.0" width="66" height="45"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-0O-IEy">
                                                             <rect key="frame" x="8" y="3" width="40" height="40"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2eY-D5-y12">
+                                                            <rect key="frame" x="284" y="10" width="30" height="26"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.16862745100000001" green="0.52156862749999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -375,7 +395,9 @@
                                         <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="captionLabel" destination="GsN-f4-9us" id="Wld-UB-wrd"/>
+                                            <outlet property="clockImageView" destination="2eY-D5-y12" id="oA1-h9-pKT"/>
                                             <outlet property="commentsLabel" destination="7G3-f0-Nlk" id="GhF-Db-UK4"/>
+                                            <outlet property="daysAgoLabel" destination="JD0-mW-229" id="o6s-TU-Y7m"/>
                                             <outlet property="likesLabel" destination="oYp-97-01a" id="h7K-Sc-sDy"/>
                                             <outlet property="postImageView" destination="NVz-h3-OZ8" id="ppc-jQ-gP8"/>
                                             <outlet property="profilePictureView" destination="Sjn-0O-IEy" id="zJt-Te-Tdu"/>

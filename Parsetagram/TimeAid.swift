@@ -40,6 +40,19 @@ class TimeAid {
         
     }
     
+    /* A truncated version of getTimeDifference() for the Home View Feed
+     *
+     */
+    
+    static func getFeedTimeDifference(date1: String) -> String {
+        var timeDifferenceString = getTimeDifference(date1)
+        for _ in 1...3 {
+            timeDifferenceString.removeAtIndex(timeDifferenceString.endIndex.predecessor())
+        }
+        
+        return timeDifferenceString
+    }
+    
     /* Returns a string of the date in the format: Ex. "2016-06-22 04:08:11"  */
     static func getFormattedDate() -> String {
         let currentDate = NSDate()
