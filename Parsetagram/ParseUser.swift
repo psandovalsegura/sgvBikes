@@ -36,6 +36,9 @@ class ParseUser: NSObject {
         //Add user join Date and Time
         currentUser["formattedDateString"] = TimeAid.getFormattedDate()
         
+        //Add default profile picture as PFFile?
+        currentUser["profilePicture"] = UserInstance.loadDefaultProfileImageFile()
+        
         // Save object (following function will save the object in Parse asynchronously)
         currentUser.saveInBackgroundWithBlock(completion)
     }

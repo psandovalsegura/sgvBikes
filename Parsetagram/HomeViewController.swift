@@ -37,10 +37,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         insets.bottom += InfiniteScrollActivityView.defaultHeight;
         tableView.contentInset = insets
         
-        // Do any additional setup after loading the view.
-        //Initially load data
-        self.loadPostData("initial")
-        
         //Refresh control setup
         refreshControl.addTarget(self, action: #selector(loadPostData(_:)), forControlEvents: UIControlEvents.ValueChanged)
         refreshControl.backgroundColor = UIColor.clearColor()
@@ -48,11 +44,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         tableView.insertSubview(refreshControl, atIndex: 0)
         
-        loadPostData("viewDidLoad")
+        //Initially load data
+        self.loadPostData("initial")
         
         //First create ParseUser object
         //In testing, first must create a ParseUser object
-        //UserInstance.loadUser()
+        UserInstance.loadUser()
+        UserInstance.loadUserProperties()
         //print("By: HomeViewController.swift \n --------> \(UserInstance.CURRENT_USER["username"] as! String) ")
         
         //print("By: HomeViewController.swift \n --------> \(PFUser.currentUser()?.objectId)")
@@ -133,6 +131,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
+        query.limit = 10
+        
+        if String(point) == "scrollViewDidScroll" {
+            //User reached the bottom of the feed, load NEW posts
+            query.skip = 10
+        } else {
+            self.posts = [PFObject]()
+        }
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) in
             if error == nil {
@@ -145,7 +151,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.loadingMoreView!.stopAnimating()
                 
                 if let objects = objects {
-                    self.posts = objects
+                    self.posts += objects
                     self.tableView.reloadData()
                 }
                 

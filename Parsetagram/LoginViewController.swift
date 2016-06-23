@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
                 //Manually segue
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
                 ParseUser.createUser(withCompletion: { (success: Bool, error: NSError?) in
-                    //
+                    // ParseUser creation
                 })
             } else {
                 //Animate an alert for ERROR

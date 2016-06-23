@@ -132,6 +132,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         // Set the username label
+        UserInstance.loadUserProperties()
         usernameLabel.text = "@ \(PFUser.currentUser()!.username!)"
     }
 
