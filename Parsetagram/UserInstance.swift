@@ -120,10 +120,12 @@ public class UserInstance {
     /* ---------------------------PFUser object modification methods are below-------------------------------- */
     
     static func addPost() {
+        //add to array, increment count, save, call loadUserProperties, consider using fetch()
         
     }
     
     static func addFollower() {
+        //make structure?, increment, save, call loadUserProperties
         
     }
     

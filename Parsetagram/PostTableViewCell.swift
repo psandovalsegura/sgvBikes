@@ -14,12 +14,15 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView! //"media"
     @IBOutlet weak var likesLabel: UILabel! // "likesCount"
     @IBOutlet weak var commentsLabel: UILabel! //"commentsCount"
-    
     @IBOutlet weak var captionLabel: UILabel! // "caption"
+    @IBOutlet weak var profilePictureView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Create circular profile picture views
+        self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2
+        profilePictureView.clipsToBounds = true
+        profilePictureView.layer.borderColor = UIColor.blackColor().CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -80,6 +80,23 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
             //Get the author
             cell.usernameLabel.text = post["username"] as? String
             
+            //Get the profile picture
+            if let profileImage = post["associatedProfilePicture"] {
+                
+                let postImagePFFile = profileImage as! PFFile
+                
+                postImagePFFile.getDataInBackgroundWithBlock({
+                    (imageData: NSData?, error: NSError?) -> Void in
+                    if error == nil {
+                        if let imageData = imageData {
+                            let image = UIImage(data:imageData)
+                            cell.profilePictureView.image = image
+                        }
+                    }
+                })
+                
+            }
+            
         }
         
         return cell

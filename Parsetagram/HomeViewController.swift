@@ -47,13 +47,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Initially load data
         self.loadPostData("initial")
         
-        //First create ParseUser object
-        //In testing, first must create a ParseUser object
-        //UserInstance.loadUser()
-        //UserInstance.loadUserProperties()
-        //print("By: HomeViewController.swift \n --------> \(UserInstance.CURRENT_USER["username"] as! String) ")
+        //Load it again to confirm self.posts.count, which causes errors
+        tableView.reloadData()
+        self.loadPostData("confirm")
+        tableView.reloadData()
         
-        //print("By: HomeViewController.swift \n --------> \(PFUser.currentUser()?.objectId)")
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,10 +64,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let post = self.posts[indexPath.row]
         
         //Populate the custom table cell
+        //If the image could be attained, then likely the comments, likes, caption, etc. as well
         if let postImage = post["media"] {
             
             let postImagePFFile = postImage as! PFFile
-            //If the image could be attained, then likely the comments, likes, caption, etc. as well
+            
             postImagePFFile.getDataInBackgroundWithBlock({
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
@@ -91,6 +90,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             //Get the author
             cell.usernameLabel.text = post["username"] as? String
+            
+            //Get the profile picture
+            if let profileImage = post["associatedProfilePicture"] {
+                
+                let postImagePFFile = profileImage as! PFFile
+                
+                postImagePFFile.getDataInBackgroundWithBlock({
+                    (imageData: NSData?, error: NSError?) -> Void in
+                    if error == nil {
+                        if let imageData = imageData {
+                            let image = UIImage(data:imageData)
+                            cell.profilePictureView.image = image
+                        }
+                    }
+                })
+                
+            }
             
         }
         
