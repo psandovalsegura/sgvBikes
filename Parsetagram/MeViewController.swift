@@ -37,11 +37,11 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         tableView.insertSubview(refreshControl, atIndex: 0)
         loadPostData("viewDidLoad")
-        
+        /*
         print(UserInstance.USERNAME)
         print(UserInstance.FOLLWER_COUNT)
         print(UserInstance.JOIN_DATE)
-        print(UserInstance.POSTS_COUNT)
+        print(UserInstance.POSTS_COUNT)*/
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -155,10 +155,10 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewWillAppear(true)
         // Set the username label
         //UserInstance.loadUserProperties()
-        usernameLabel.text = "@ \(PFUser.currentUser()!.username!)"
+        usernameLabel.text = "@ \(UserInstance.USERNAME)"
     }
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -166,7 +166,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         if segue.identifier == "toSettings", let settingsVC = segue.destinationViewController as? SettingsViewController {
             
         }
-    }
+    }*/
     
 
 }

@@ -11,7 +11,9 @@ import Parse
 import MBProgressHUD
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
-
+    
+    let QUERY_LIMIT = 5
+    
     @IBOutlet weak var tableView: UITableView!
     
     var refreshControl = UIRefreshControl()
@@ -47,11 +49,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Initially load data
         self.loadPostData("initial")
         
-        //Load it again to confirm self.posts.count, which causes errors
-        tableView.reloadData()
-        self.loadPostData("confirm")
-        tableView.reloadData()
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,6 +57,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+        
+        print("There are \(self.posts.count) posts")
+        print("currentIndex path is \(indexPath.row)")
         
         let post = self.posts[indexPath.row]
         
@@ -147,13 +147,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
-        query.limit = 10
+        query.limit = QUERY_LIMIT
         
         if String(point) == "scrollViewDidScroll" {
             //User reached the bottom of the feed, load NEW posts
-            query.skip = 10
-        } else {
-            self.posts = [PFObject]()
+            query.skip = QUERY_LIMIT
         }
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) in
@@ -167,7 +165,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.loadingMoreView!.stopAnimating()
                 
                 if let objects = objects {
-                    self.posts += objects
+                    if String(point) == "scrollViewDidScroll" {
+                        self.posts += objects
+                    } else {
+                        self.posts = objects
+                    }
                     self.tableView.reloadData()
                 }
                 
