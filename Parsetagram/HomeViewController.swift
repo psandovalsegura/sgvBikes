@@ -58,8 +58,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
         
-        print("There are \(self.posts.count) posts")
-        print("currentIndex path is \(indexPath.row)")
+        cell.imageButton.tag = indexPath.row
+        cell.likeButton.tag = indexPath.row
+        cell.commentButton.tag = indexPath.row
+        cell.shareButton.tag = indexPath.row
         
         let post = self.posts[indexPath.row]
         
@@ -86,7 +88,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.likesLabel.text = "\(post["likesCount"]) Likes"
             
             //Get the comments count
-            cell.commentsLabel.text = "\(post["commentsCount"]) Comments"
+            cell.commentsCountLabel.text = "\(post["commentsCount"])"
             
             //Get the author
             cell.usernameLabel.text = post["username"] as? String
@@ -170,8 +172,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 if let objects = objects {
                     if String(point) == "scrollViewDidScroll" {
                         self.posts += objects
+                        UserInstance.HOME_VIEW_POSTS += objects
                     } else {
                         self.posts = objects
+                        UserInstance.HOME_VIEW_POSTS = objects
                     }
                     self.tableView.reloadData()
                 }
@@ -213,8 +217,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toFullDetailView", let detailVC = segue.destinationViewController as? PostDetailViewController, postIndex = tableView.indexPathForSelectedRow?.row {
-            detailVC.post = self.posts[postIndex]
+        if segue.identifier == "toFullDetailView", let detailVC = segue.destinationViewController as? PostDetailViewController {
+            detailVC.post = self.posts[(sender?.tag)!]
         }
     }
  

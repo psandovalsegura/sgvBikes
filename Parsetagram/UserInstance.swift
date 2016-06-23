@@ -22,7 +22,7 @@ public class UserInstance {
     
     public static var POSTS: [PFObject]!
     
-    
+    public static var HOME_VIEW_POSTS = [PFObject]()
     
     /* Modification of PFUser object to add more key-value pairs - an implementation of ParseUser.swift
      * Used during sign-up

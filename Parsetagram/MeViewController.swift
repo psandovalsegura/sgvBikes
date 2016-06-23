@@ -75,7 +75,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
             cell.likesLabel.text = "\(post["likesCount"]) Likes"
             
             //Get the comments count
-            cell.commentsLabel.text = "\(post["commentsCount"]) Comments"
+            cell.commentsCountLabel.text = "\(post["commentsCount"])"
             
             //Get the author
             cell.usernameLabel.text = post["username"] as? String

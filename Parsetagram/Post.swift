@@ -42,6 +42,9 @@ class Post: NSObject {
         //Add the profile picture of the user that uploaded the image
         post["associatedProfilePicture"] = getPFFileFromImage(UserInstance.PROFILE_PICTURE)
         
+        //Add array to represent users who have liked  -- UPGRADE
+        //post["likesBy"]
+        
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)
     }
