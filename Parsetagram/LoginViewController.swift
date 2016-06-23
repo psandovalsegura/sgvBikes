@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
                 print("By: LoginViewController.swift \n --------> Login success.")
-
+                UserInstance.loadUser(user!)
                 //Manually segue
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
             } else {
@@ -52,9 +52,7 @@ class LoginViewController: UIViewController {
                 print("By: LoginViewController.swift \n --------> Created a user!")
                 //Manually segue
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
-                ParseUser.createUser(withCompletion: { (success: Bool, error: NSError?) in
-                    // ParseUser creation
-                })
+                UserInstance.createUser(newUser)
             } else {
                 //Animate an alert for ERROR
                 let errorString = error!.userInfo["error"] as? String

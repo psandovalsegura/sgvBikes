@@ -11,7 +11,6 @@
 		9B313F121D1A34F700F99561 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */; };
 		9B313F191D1A4D1500F99561 /* TimeAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F181D1A4D1500F99561 /* TimeAid.swift */; };
 		9B313F1B1D1AE3C900F99561 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F1A1D1AE3C900F99561 /* SettingsViewController.swift */; };
-		9B313F1D1D1B09E500F99561 /* ParseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F1C1D1B09E500F99561 /* ParseUser.swift */; };
 		9B313F211D1B268900F99561 /* UserInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F201D1B268900F99561 /* UserInstance.swift */; };
 		9B70FEC61D18BA5A00D65E58 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */; };
 		9BAB5E841D18FB830001A178 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E831D18FB830001A178 /* MeViewController.swift */; };
@@ -57,7 +56,6 @@
 		9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		9B313F181D1A4D1500F99561 /* TimeAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAid.swift; sourceTree = "<group>"; };
 		9B313F1A1D1AE3C900F99561 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		9B313F1C1D1B09E500F99561 /* ParseUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUser.swift; sourceTree = "<group>"; };
 		9B313F201D1B268900F99561 /* UserInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInstance.swift; sourceTree = "<group>"; };
 		9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		9BAB5E831D18FB830001A178 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				9BAB5E8A1D19912F0001A178 /* Post.swift */,
-				9B313F1C1D1B09E500F99561 /* ParseUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -504,7 +501,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B313F1D1D1B09E500F99561 /* ParseUser.swift in Sources */,
 				9B313F121D1A34F700F99561 /* InfiniteScrollActivityView.swift in Sources */,
 				9B313F191D1A4D1500F99561 /* TimeAid.swift in Sources */,
 				9BAB5E841D18FB830001A178 /* MeViewController.swift in Sources */,

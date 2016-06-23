@@ -37,6 +37,11 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
         tableView.insertSubview(refreshControl, atIndex: 0)
         loadPostData("viewDidLoad")
+        
+        print(UserInstance.USERNAME)
+        print(UserInstance.FOLLWER_COUNT)
+        print(UserInstance.JOIN_DATE)
+        print(UserInstance.POSTS_COUNT)
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -132,7 +137,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         // Set the username label
-        UserInstance.loadUserProperties()
+        //UserInstance.loadUserProperties()
         usernameLabel.text = "@ \(PFUser.currentUser()!.username!)"
     }
 

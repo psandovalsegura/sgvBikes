@@ -49,8 +49,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //First create ParseUser object
         //In testing, first must create a ParseUser object
-        UserInstance.loadUser()
-        UserInstance.loadUserProperties()
+        //UserInstance.loadUser()
+        //UserInstance.loadUserProperties()
         //print("By: HomeViewController.swift \n --------> \(UserInstance.CURRENT_USER["username"] as! String) ")
         
         //print("By: HomeViewController.swift \n --------> \(PFUser.currentUser()?.objectId)")
