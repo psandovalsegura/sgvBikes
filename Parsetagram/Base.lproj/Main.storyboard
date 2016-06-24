@@ -18,8 +18,33 @@
             <string>SanFranciscoText-Light</string>
             <string>SanFranciscoText-Light</string>
             <string>SanFranciscoText-Light</string>
+            <string>SanFranciscoText-Light</string>
+            <string>SanFranciscoText-Light</string>
+            <string>SanFranciscoText-Light</string>
         </mutableArray>
         <mutableArray key="SanFranciscoText-Medium.otf">
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
+            <string>SanFranciscoText-Medium</string>
             <string>SanFranciscoText-Medium</string>
             <string>SanFranciscoText-Medium</string>
             <string>SanFranciscoText-Medium</string>
@@ -36,21 +61,15 @@
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
+            <string>SanFranciscoText-Regular</string>
+            <string>SanFranciscoText-Regular</string>
         </mutableArray>
         <mutableArray key="SanFranciscoText-Semibold.otf">
             <string>SanFranciscoText-Semibold</string>
             <string>SanFranciscoText-Semibold</string>
             <string>SanFranciscoText-Semibold</string>
-        </mutableArray>
-        <mutableArray key="ufonts.com_din-light.ttf">
-            <string>DIN-Light</string>
-            <string>DIN-Light</string>
-            <string>DIN-Light</string>
-            <string>DIN-Light</string>
-            <string>DIN-Light</string>
-            <string>DIN-Light</string>
-            <string>DIN-Light</string>
-            <string>DIN-Light</string>
+            <string>SanFranciscoText-Semibold</string>
+            <string>SanFranciscoText-Semibold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -129,7 +148,7 @@
                                         <rect key="frame" x="55" y="49" width="264" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                        <color key="textColor" red="0.89411764705882357" green="0.85098039215686272" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -137,7 +156,7 @@
                                         <rect key="frame" x="55" y="149" width="264" height="38"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                        <color key="textColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -196,7 +215,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="523" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-rb-eyw">
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="523" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u4r-rb-eyw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,25 +299,25 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7T-tc-lWo">
-                                                            <rect key="frame" x="94" y="37" width="275" height="20"/>
+                                                            <rect key="frame" x="100" y="37" width="269" height="20"/>
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-kG-PMb">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-kG-PMb">
                                                             <rect key="frame" x="8" y="36" width="91" height="21"/>
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXr-8E-oMV">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Comment Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-eJ-vWL">
+                                                            <rect key="frame" x="100" y="55" width="269" height="20"/>
+                                                            <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="14"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXr-8E-oMV" userLabel="Latest Commenter Label">
                                                             <rect key="frame" x="8" y="54" width="91" height="21"/>
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Comment Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5f-eJ-vWL">
-                                                            <rect key="frame" x="94" y="55" width="275" height="20"/>
-                                                            <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -320,6 +339,7 @@
                                             <outlet property="commentsCountLabel" destination="KYT-eP-oHX" id="p2S-hK-vSp"/>
                                             <outlet property="daysAgoLabel" destination="8sR-Tt-NMf" id="pQB-hL-m8D"/>
                                             <outlet property="imageButton" destination="TdF-v3-Rnn" id="MoQ-mT-nuR"/>
+                                            <outlet property="latestCommenterUsername" destination="uXr-8E-oMV" id="wTx-MT-GaF"/>
                                             <outlet property="latestCommentsLabel" destination="P5f-eJ-vWL" id="FMe-e6-8ap"/>
                                             <outlet property="likeButton" destination="Oc1-VY-NNL" id="84R-lS-so7"/>
                                             <outlet property="likesLabel" destination="Zbb-Cd-kyM" id="0k0-kf-J1D"/>
@@ -480,33 +500,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lAt-9r-fyu">
-                                <rect key="frame" x="0.0" y="100" width="375" height="396"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="396"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AYs-GC-3xp">
-                                <rect key="frame" x="0.0" y="544" width="375" height="74"/>
+                                <rect key="frame" x="0.0" y="544" width="375" height="81"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hk-4L-vQT">
                                         <rect key="frame" x="182" y="8" width="185" height="29"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date taken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpk-mi-v3G">
                                         <rect key="frame" x="8" y="8" width="199" height="29"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xY9-5t-qJp">
                                         <rect key="frame" x="182" y="45" width="185" height="29"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABq-9g-vW2" userLabel="usernameLabel">
-                                <rect key="frame" x="0.0" y="64" width="375" height="36"/>
-                                <color key="backgroundColor" red="0.050980392156862744" green="0.52156862745098043" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="460" width="375" height="36"/>
                                 <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="25"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zio-XE-fhR">
@@ -549,80 +571,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-8B-36c" userLabel="usernameLabel">
-                                <rect key="frame" x="0.0" y="64" width="375" height="52"/>
-                                <color key="backgroundColor" red="0.16862745100000001" green="0.52156862749999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="25"/>
-                                <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="325" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f1h-8Z-9ap">
-                                <rect key="frame" x="0.0" y="190" width="375" height="395"/>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="341" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f1h-8Z-9ap">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="325" id="tG5-3b-IiL" customClass="PostTableViewCell" customModule="Parsetagram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="325"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="341" id="tG5-3b-IiL" customClass="PostTableViewCell" customModule="Parsetagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="341"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tG5-3b-IiL" id="IEZ-1d-q7S">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="324.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="340.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVz-h3-OZ8">
-                                                    <rect key="frame" x="0.0" y="46" width="375" height="206"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-97-01a">
-                                                    <rect key="frame" x="94" y="286" width="95" height="33"/>
-                                                    <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="13"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="## Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYp-97-01a">
+                                                    <rect key="frame" x="46" y="272" width="67" height="18"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsN-f4-9us">
-                                                    <rect key="frame" x="8" y="260" width="359" height="33"/>
-                                                    <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="13"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="8" y="298" width="359" height="28"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xS-x3-r4V">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                                    <rect key="frame" x="0.0" y="8" width="375" height="42"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QY0-c5-l9O">
-                                                            <rect key="frame" x="72" y="0.0" width="303" height="45"/>
-                                                            <color key="backgroundColor" red="0.16862745100000001" green="0.52156862749999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="17"/>
+                                                            <rect key="frame" x="56" y="4" width="319" height="28"/>
+                                                            <fontDescription key="fontDescription" name="SanFranciscoText-Semibold" family="San Francisco Text" pointSize="15"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="## d" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD0-mW-229">
-                                                            <rect key="frame" x="309" y="0.0" width="66" height="45"/>
-                                                            <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="13"/>
+                                                            <rect key="frame" x="309" y="4" width="66" height="28"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-UltraLight" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-0O-IEy">
-                                                            <rect key="frame" x="8" y="3" width="40" height="40"/>
-                                                        </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2eY-D5-y12">
-                                                            <rect key="frame" x="291" y="12" width="28" height="22"/>
+                                                            <rect key="frame" x="294" y="7" width="28" height="22"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sjn-0O-IEy">
+                                                            <rect key="frame" x="13" y="0.0" width="35" height="35"/>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.16862745100000001" green="0.52156862749999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="favoritespng" translatesAutoresizingMaskIntoConstraints="NO" id="EwJ-B8-fnL">
-                                                    <rect key="frame" x="62" y="288" width="30" height="30"/>
+                                                    <rect key="frame" x="8" y="266" width="30" height="30"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="commentspng" translatesAutoresizingMaskIntoConstraints="NO" id="OL4-it-ZAQ">
-                                                    <rect key="frame" x="246" y="288" width="30" height="30"/>
+                                                    <rect key="frame" x="121" y="266" width="30" height="30"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G3-f0-Nlk">
-                                                    <rect key="frame" x="284" y="286" width="58" height="33"/>
-                                                    <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="13"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="159" y="269" width="58" height="24"/>
+                                                    <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVz-h3-OZ8">
+                                                    <rect key="frame" x="1" y="51" width="375" height="213"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="captionLabel" destination="GsN-f4-9us" id="Wld-UB-wrd"/>
                                             <outlet property="clockImageView" destination="2eY-D5-y12" id="oA1-h9-pKT"/>
@@ -637,44 +646,48 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Shj-Iq-Ycc">
-                                <rect key="frame" x="0.0" y="114" width="375" height="74"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="51"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khD-lH-7Nh">
-                                        <rect key="frame" x="182" y="8" width="185" height="29"/>
-                                        <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="17"/>
-                                        <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Join Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khD-lH-7Nh">
+                                        <rect key="frame" x="182" y="0.0" width="185" height="29"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD0-6X-cvI">
-                                        <rect key="frame" x="182" y="37" width="185" height="29"/>
-                                        <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="17"/>
-                                        <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="182" y="22" width="185" height="29"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZB-8B-36c" userLabel="usernameLabel">
+                                        <rect key="frame" x="8" y="0.0" width="173" height="29"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B5-ep-E39">
-                                        <rect key="frame" x="8" y="8" width="199" height="29"/>
-                                        <fontDescription key="fontDescription" name="DIN-Light" family="DIN Light" pointSize="17"/>
-                                        <color key="textColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="8" y="22" width="87" height="29"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hME-sO-cFf">
-                                <rect key="frame" x="287" y="593" width="83" height="30"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="logOut:" destination="Nib-gc-4w4" eventType="touchUpInside" id="qvD-hQ-UGW"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="H4x-dn-8H6"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KE-0Z-Prs" userLabel="Separator">
-                                <rect key="frame" x="0.0" y="188" width="375" height="4"/>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KE-0Z-Prs" userLabel="Separator">
+                                <rect key="frame" x="0.0" y="113" width="375" height="2"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3z-Ds-RPf">
-                                <rect key="frame" x="303" y="72" width="67" height="34"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Me" id="mtX-Bl-uBX">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="nyA-g3-reO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="z3z-Ds-RPf">
+                                <rect key="frame" x="292" y="5" width="67" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="settingspng">
                                     <color key="titleColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -682,11 +695,8 @@
                                     <segue destination="93E-uU-i88" kind="show" identifier="toSettings" id="QZ7-RB-xF0"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Me" id="mtX-Bl-uBX"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -714,12 +724,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tki-71-TXy">
-                                <rect key="frame" x="142" y="38" width="91" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5vS-1e-XJ1" userLabel="Log Out ">
+                                <rect key="frame" x="0.0" y="575" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6A-1b-EXq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="logOut:" destination="93E-uU-i88" eventType="touchUpInside" id="Pcc-t0-LLk"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" id="5jG-TQ-ZZz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.85490196078431369" green="0.062745098039215685" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vff-a8-2cS" userLabel="Profile Picture Change">
+                                <rect key="frame" x="0.0" y="72" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYE-hu-8Wn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <state key="normal" title="Change Profile Picture">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="changeProfilePicture:" destination="93E-uU-i88" eventType="touchUpInside" id="FIW-hX-HMc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQz-RD-TEs">
+                                        <rect key="frame" x="325" y="0.0" width="50" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJT-Zt-FfC" userLabel="Egg">
+                                <rect key="frame" x="0.0" y="128" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejj-53-8NM">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <state key="normal" title="Egg">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dao-B8-qJw">
+                                        <rect key="frame" x="325" y="0.0" width="50" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ysq-Tz-J1d" userLabel="Plant">
+                                <rect key="frame" x="0.0" y="184" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuz-dp-Mdm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <state key="normal" title="Plant">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHR-hZ-tta">
+                                        <rect key="frame" x="325" y="0.0" width="50" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="edL-Mf-BWO" userLabel="Credits">
+                                <rect key="frame" x="0.0" y="240" width="375" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toz-nz-bcw">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <state key="normal" title="Credits">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXe-sy-YxU">
+                                        <rect key="frame" x="325" y="0.0" width="50" height="48"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -728,7 +828,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhR-im-ywS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2731.5" y="1482.5"/>
+            <point key="canvasLocation" x="2717.5" y="1498.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="10l-XP-siD">
@@ -763,24 +863,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capture the Moment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXq-98-CSe">
-                                <rect key="frame" x="0.0" y="64" width="375" height="79"/>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdS-61-CcR">
-                                <rect key="frame" x="0.0" y="142" width="375" height="79"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdS-61-CcR" userLabel="Open Camera View">
+                                <rect key="frame" x="0.0" y="107" width="375" height="79"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJ9-QR-1wY">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0a-dY-vE3">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
-                                                <color key="backgroundColor" red="0.1215686275" green="0.61568627450000002" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="19"/>
                                                 <state key="normal" title="Open Camera">
-                                                    <color key="titleColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ttj-pK-MFA"/>
@@ -789,10 +887,10 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bua-uU-Uo7">
                                                 <rect key="frame" x="344" y="0.0" width="31" height="79"/>
-                                                <color key="backgroundColor" red="0.1215686275" green="0.61568627450000002" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                                <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="19"/>
                                                 <state key="normal" title="&gt;">
-                                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RGt-Aj-AlY"/>
@@ -805,49 +903,41 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find that Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfk-0b-fSC">
-                                <rect key="frame" x="0.0" y="255" width="375" height="79"/>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="212" width="375" height="61"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="25"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xke-ml-G11">
-                                <rect key="frame" x="0.0" y="333" width="375" height="79"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fi0-b2-p6g" userLabel="Open Photo Library View">
+                                <rect key="frame" x="0.0" y="281" width="375" height="79"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fi0-b2-p6g">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtv-6N-m9c">
+                                        <rect key="frame" x="344" y="0.0" width="31" height="79"/>
+                                        <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Semibold" family="San Francisco Text" pointSize="19"/>
+                                        <state key="normal" title="&gt;">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TgE-23-TWH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-rT-2IT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9y-rT-2IT">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
-                                                <color key="backgroundColor" red="0.1215686275" green="0.61568627450000002" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
-                                                <state key="normal" title="Open Photo Library">
-                                                    <color key="titleColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Nv-a9-Pnt"/>
-                                                    <action selector="takeLibraryPhoto:" destination="KFj-mu-jTv" eventType="touchUpInside" id="N6c-t3-MzG"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtv-6N-m9c">
-                                                <rect key="frame" x="344" y="0.0" width="31" height="79"/>
-                                                <color key="backgroundColor" red="0.1215686275" green="0.61568627450000002" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
-                                                <state key="normal" title="&gt;">
-                                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TgE-23-TWH"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
+                                        <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="19"/>
+                                        <state key="normal" title="Open Photo Library">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Nv-a9-Pnt"/>
+                                            <action selector="takeLibraryPhoto:" destination="KFj-mu-jTv" eventType="touchUpInside" id="N6c-t3-MzG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="camerapng" id="FAs-y3-M20"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -857,7 +947,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4X-z6-bnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441.5" y="1324.5"/>
+            <point key="canvasLocation" x="457.5" y="1458.5"/>
         </scene>
         <!--Post Configuration View Controller-->
         <scene sceneID="6uA-wT-Buc">
@@ -876,10 +966,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ys2-6z-foA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
-                                        <color key="backgroundColor" red="0.1215686275" green="0.61568627450000002" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="19"/>
                                         <state key="normal" title="Upload">
-                                            <color key="titleColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onUpload:" destination="uTe-Tk-6Q9" eventType="touchUpInside" id="OKt-D6-Wov"/>
@@ -888,10 +978,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oY-Mk-eaX">
                                         <rect key="frame" x="344" y="0.0" width="31" height="79"/>
-                                        <color key="backgroundColor" red="0.1215686275" green="0.61568627450000002" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="19"/>
                                         <state key="normal" title="&gt;">
-                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4wU-zc-p5c"/>
@@ -905,10 +995,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAq-TA-1ni">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                        <color key="backgroundColor" red="0.16862745100000001" green="0.52156862749999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="19"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.15686274510000001" green="0.20000000000000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onCancel:" destination="uTe-Tk-6Q9" eventType="touchUpInside" id="7dR-Yq-gJy"/>
@@ -917,10 +1007,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-i6-JeJ">
                                         <rect key="frame" x="344" y="0.0" width="31" height="60"/>
-                                        <color key="backgroundColor" red="0.16862745098039217" green="0.52156862745098043" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="19"/>
                                         <state key="normal" title="&gt;">
-                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7lu-HT-s7T"/>
@@ -929,35 +1019,30 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready to upload?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-Pj-ecR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="52"/>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iW6-PZ-FN7">
-                                <rect key="frame" x="20" y="349" width="335" height="29"/>
-                                <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="373" width="335" height="29"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvP-Jx-Xpx">
-                                <rect key="frame" x="20" y="80" width="335" height="261"/>
+                                <rect key="frame" x="0.0" y="77" width="375" height="288"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K81-Ax-clF" userLabel="captionLine">
-                                <rect key="frame" x="20" y="410" width="335" height="2"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <view alpha="0.34999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K81-Ax-clF" userLabel="captionLine">
+                                <rect key="frame" x="20" y="434" width="335" height="2"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What's this?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2f5-g0-9xt">
-                                <rect key="frame" x="20" y="375" width="335" height="47"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <rect key="frame" x="20" y="399" width="335" height="47"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready to upload?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0J-Pj-ecR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="52"/>
+                                <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="25"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.89411764709999997" green="0.85098039219999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Yk1-U1-4f1" appends="YES" id="yPZ-Bi-iox"/>
@@ -976,7 +1061,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="946.5" y="1300.5"/>
+            <point key="canvasLocation" x="974.5" y="1458.5"/>
         </scene>
         <!--Feed-->
         <scene sceneID="39q-Sd-B42">
@@ -1027,6 +1112,6 @@
         <image name="sharepng" width="25" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1ZO-t5-XaX"/>
+        <segue reference="s9Q-5m-yUg"/>
     </inferredMetricsTieBreakers>
 </document>

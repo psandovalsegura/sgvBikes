@@ -48,6 +48,11 @@ class PostConfigurationViewController: UIViewController {
         //Increment count
         UserInstance.CURRENT_USER.incrementKey("postsCount")
         
+        //Save
+        UserInstance.CURRENT_USER.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
+            UserInstance.loadUserProperties()
+        }
+        
         print("By: PostConfigurationViewController.swift \n --------> Upload by \(UserInstance.USERNAME)")
         self.performSegueWithIdentifier("uploadToHomeSegue", sender: nil)
     }

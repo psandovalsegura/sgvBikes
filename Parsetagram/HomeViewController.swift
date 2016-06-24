@@ -93,6 +93,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //Get the author
             cell.usernameLabel.text = post["username"] as? String
             
+            //Get the other username label
+            cell.smallerUsernameLabel.text = cell.usernameLabel.text
+            
             //Get the profile picture
             if let profileImage = post["associatedProfilePicture"] {
                 
@@ -117,8 +120,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let storage = post["comments"] as! [[String]]
             if !storage.isEmpty {
                 cell.latestCommentsLabel.text = CommentAid.getLatestComment(storage).comment
+                cell.latestCommenterUsername.text = CommentAid.getLatestComment(storage).username
             } else {
-                cell.latestCommentsLabel.text = "💭 No Comments Yet. Be the first!"
+                cell.latestCommenterUsername.text = ""
+                cell.latestCommentsLabel.text = "More..."
             }
             
             

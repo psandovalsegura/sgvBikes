@@ -46,7 +46,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.commentLabel.text = self.comments[indexPath.row]
         cell.timeAgoLabel.text = TimeAid.getTimeDifferencePhrase(self.timestamps[indexPath.row])
         
-        print("By: CommentsViewController.swift \n --------> index path.row = \(indexPath.row) and the comment is = \(self.comments[indexPath.row])")
+        //print("By: CommentsViewController.swift \n --------> index path.row = \(indexPath.row) and the comment is = \(self.comments[indexPath.row])")
         //Allow for profile picture in comments -- UPGRADE
         return cell
     }

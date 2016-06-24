@@ -20,6 +20,10 @@ public class UserInstance {
     public static var JOIN_DATE: String!
     public static var PROFILE_PICTURE: UIImage!
     
+    //Constants for use in resizing profile image
+    public static let PROFILE_VIEW_WIDTH = 40
+    public static let PROFILE_VIEW_HEIGHT = 40
+    
     public static var POSTS: [PFObject]!
     
     public static var HOME_VIEW_POSTS = [PFObject]()
@@ -130,7 +134,39 @@ public class UserInstance {
         
     }
     
-    static func changeProfilePicture() {
+    static func updateProfilePicture(newProfileImage: UIImage) {
         
+        //Resize image in preparation for upload
+        let resizedImage = resize(newProfileImage, newSize: CGSize(width: PROFILE_VIEW_WIDTH, height: PROFILE_VIEW_HEIGHT))
+        
+        //Update the profile picture
+        UserInstance.CURRENT_USER["profilePicture"] = Post.getPFFileFromImage(resizedImage)
+        
+        //Save
+        UserInstance.CURRENT_USER.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
+            UserInstance.loadUserProperties()
+        }
+    }
+    
+    
+    /*-----------------------------Helper functions----------------------------*/
+   
+    static func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
+
+
+
+
+
+
+

@@ -19,8 +19,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var clockImageView: UIImageView!
     @IBOutlet weak var daysAgoLabel: UILabel!
     
-    
+    /* These outlets are specific for use in the Home View Feed */
     @IBOutlet weak var latestCommentsLabel: UILabel!
+    @IBOutlet weak var latestCommenterUsername: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!

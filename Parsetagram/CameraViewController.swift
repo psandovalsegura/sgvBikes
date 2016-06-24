@@ -20,7 +20,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
-        getPictureFromCamera(true) //Whenever the user selects the camera, they will be prompted with the ability to take a photo
+        getPictureFromCamera(true) //The first time the user selects the camera, they will be prompted with the ability to take a photo
     }
     
     func imagePickerController(picker: UIImagePickerController,

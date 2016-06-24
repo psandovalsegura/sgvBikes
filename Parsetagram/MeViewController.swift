@@ -148,11 +148,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
 
     
-    @IBAction func logOut(sender: AnyObject) {
-        PFUser.logOutInBackgroundWithBlock { (error: NSError?) in
-            // PFUser.currentUser() will now be nil
-        }
-    }
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)

@@ -59,9 +59,9 @@ class TimeAid {
         //Need to correct values when not in testing -- NOT ACCURATE
         var dayCount = 0; dayCount += (diffDateComponents.year * 365); dayCount += (diffDateComponents.month * 30); dayCount += (diffDateComponents.day);
         
-        var hourCount = diffDateComponents.hour
-        var minuteCount = diffDateComponents.minute
-        var secondCount = diffDateComponents.second
+        let hourCount = diffDateComponents.hour
+        let minuteCount = diffDateComponents.minute
+        let secondCount = diffDateComponents.second
         
         if dayCount <= 0 {
             //Not a day has elapsed yet
@@ -70,6 +70,8 @@ class TimeAid {
                 if minuteCount <= 0 {
                     //Not a minute has elapsed yet
                     if secondCount <= 0 {
+                        return "now"
+                    } else if secondCount == 1 {
                         return "1 second ago"
                     } else {
                         return "\(secondCount) seconds ago"
