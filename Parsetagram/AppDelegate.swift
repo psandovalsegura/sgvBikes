@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if PFUser.currentUser() != nil {
             // if there is a logged in user then load the home view controller
             //Use the navigation controller because it contains the tab bar controller and leads to the homeView (storyboard of ID) of the HomeViewController
-            let loggedInViewController = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("appNavigation")
+            let loggedInViewController = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("appHome")
             self.window?.rootViewController = loggedInViewController
             print("By: AppDelegate.swift \n --------> User still logged in.")
             UserInstance.loadUser(PFUser.currentUser()!)
