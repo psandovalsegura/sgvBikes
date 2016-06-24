@@ -111,7 +111,7 @@ public class UserInstance {
      *
      */
     static func loadDefaultProfileImageFile() -> PFFile? {
-        let defaultImage = UIImage(named: "mepng")
+        let defaultImage = UIImage(named: "menewpng")
         let file = Post.getPFFileFromImage(defaultImage)
         return file
     }

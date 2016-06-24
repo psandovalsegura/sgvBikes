@@ -45,7 +45,7 @@ class PostDetailViewController: UIViewController {
             dateTakenLabel.text = TimeAid.getReadableDateFromFormat(post["formattedDateString"] as! String)
             
             //Get days ago
-            daysAgoLabel.text = "\(TimeAid.getTimeDifference(post["formattedDateString"] as! String)) ago"
+            daysAgoLabel.text = TimeAid.getTimeDifferencePhrase(post["formattedDateString"] as! String)
             
             //Get the likes count
             likesLabel.text = "\(post["likesCount"]) Likes"

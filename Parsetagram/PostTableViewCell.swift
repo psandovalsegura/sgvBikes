@@ -20,11 +20,13 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var daysAgoLabel: UILabel!
     
     
-    @IBOutlet weak var firstCommentsLabel: UILabel!
+    @IBOutlet weak var latestCommentsLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var imageButton: UIButton!
+    
+    @IBOutlet weak var smallerUsernameLabel: UILabel!
     
     var liked = false
     
@@ -48,14 +50,16 @@ class PostTableViewCell: UITableViewCell {
             post.incrementKey("likesCount")
             post.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
                 self.likesLabel.text = "\(post["likesCount"]) Likes"
-                self.likesLabel.textColor = UIColor.redColor()
+                self.likesLabel.textColor = UIColor(colorLiteralRed: 13.0/255.0, green: 133.0/237.0, blue: 237.0/255.0, alpha: 1.0)
+                self.likeButton.imageView?.image = UIImage(named: "favoritesclickedpng")
             }
             self.liked = true
         }
     }
     
     @IBAction func onComment(sender: AnyObject) {
-        
+        self.commentButton.imageView?.image = UIImage(named: "commentsclickedpng")
+        print("By: PostTableViewCell.swift \n --------> comments clicked")
     }
     
     @IBAction func onShare(sender: AnyObject) {

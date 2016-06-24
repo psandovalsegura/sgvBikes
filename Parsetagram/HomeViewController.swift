@@ -116,9 +116,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //Get first comment if one exists
             let storage = post["comments"] as! [[String]]
             if !storage.isEmpty {
-                cell.firstCommentsLabel.text = CommentAid.getLatestComment(storage).comment
+                cell.latestCommentsLabel.text = CommentAid.getLatestComment(storage).comment
             } else {
-                cell.firstCommentsLabel.text = "💭 No Comments Yet. Be the first!"
+                cell.latestCommentsLabel.text = "💭 No Comments Yet. Be the first!"
             }
             
             
