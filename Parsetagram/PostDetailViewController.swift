@@ -11,7 +11,7 @@ import Parse
 
 class PostDetailViewController: UIViewController {
     
-    var post = PFObject(className: "nil")
+    var post: PFObject!
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!

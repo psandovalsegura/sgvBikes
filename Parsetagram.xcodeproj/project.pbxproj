@@ -12,12 +12,21 @@
 		9B313F191D1A4D1500F99561 /* TimeAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F181D1A4D1500F99561 /* TimeAid.swift */; };
 		9B313F1B1D1AE3C900F99561 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F1A1D1AE3C900F99561 /* SettingsViewController.swift */; };
 		9B313F211D1B268900F99561 /* UserInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F201D1B268900F99561 /* UserInstance.swift */; };
+		9B313F2F1D1C7E7900F99561 /* SanFranciscoText-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B313F281D1C7D9F00F99561 /* SanFranciscoText-Bold.otf */; };
+		9B313F311D1C7E7900F99561 /* SanFranciscoText-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B313F2A1D1C7D9F00F99561 /* SanFranciscoText-Light.otf */; };
+		9B313F321D1C7E7900F99561 /* SanFranciscoText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B313F2B1D1C7D9F00F99561 /* SanFranciscoText-Medium.otf */; };
+		9B313F331D1C7E7900F99561 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B313F2C1D1C7D9F00F99561 /* SanFranciscoText-Regular.otf */; };
+		9B313F341D1C7E7900F99561 /* SanFranciscoText-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9B313F2D1D1C7D9F00F99561 /* SanFranciscoText-Semibold.otf */; };
+		9B6792D41D1C872500E71EA5 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6792D31D1C872500E71EA5 /* CommentsViewController.swift */; };
 		9B70FEC61D18BA5A00D65E58 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */; };
 		9BAB5E841D18FB830001A178 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E831D18FB830001A178 /* MeViewController.swift */; };
 		9BAB5E861D1911210001A178 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E851D1911210001A178 /* PostDetailViewController.swift */; };
 		9BAB5E881D19198C0001A178 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E871D19198C0001A178 /* CameraViewController.swift */; };
 		9BAB5E8B1D19912F0001A178 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E8A1D19912F0001A178 /* Post.swift */; };
 		9BAB5E8D1D19939B0001A178 /* PostConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB5E8C1D19939B0001A178 /* PostConfigurationViewController.swift */; };
+		9BE8E6841D1CA35100B1AC61 /* CommentAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8E6831D1CA35100B1AC61 /* CommentAid.swift */; };
+		9BE8E6861D1CCD7100B1AC61 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8E6851D1CCD7100B1AC61 /* CommentTableViewCell.swift */; };
+		9BE8E6881D1CF1F800B1AC61 /* PostInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8E6871D1CF1F800B1AC61 /* PostInstance.swift */; };
 		9BECE3191D18404B001C61F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BECE3181D18404B001C61F1 /* AppDelegate.swift */; };
 		9BECE31E1D18404B001C61F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE31C1D18404B001C61F1 /* Main.storyboard */; };
 		9BECE3201D18404B001C61F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BECE31F1D18404B001C61F1 /* Assets.xcassets */; };
@@ -57,12 +66,21 @@
 		9B313F181D1A4D1500F99561 /* TimeAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAid.swift; sourceTree = "<group>"; };
 		9B313F1A1D1AE3C900F99561 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9B313F201D1B268900F99561 /* UserInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInstance.swift; sourceTree = "<group>"; };
+		9B313F281D1C7D9F00F99561 /* SanFranciscoText-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Bold.otf"; sourceTree = "<group>"; };
+		9B313F2A1D1C7D9F00F99561 /* SanFranciscoText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Light.otf"; sourceTree = "<group>"; };
+		9B313F2B1D1C7D9F00F99561 /* SanFranciscoText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Medium.otf"; sourceTree = "<group>"; };
+		9B313F2C1D1C7D9F00F99561 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
+		9B313F2D1D1C7D9F00F99561 /* SanFranciscoText-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Semibold.otf"; sourceTree = "<group>"; };
+		9B6792D31D1C872500E71EA5 /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		9BAB5E831D18FB830001A178 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		9BAB5E851D1911210001A178 /* PostDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		9BAB5E871D19198C0001A178 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		9BAB5E8A1D19912F0001A178 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9BAB5E8C1D19939B0001A178 /* PostConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostConfigurationViewController.swift; sourceTree = "<group>"; };
+		9BE8E6831D1CA35100B1AC61 /* CommentAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAid.swift; sourceTree = "<group>"; };
+		9BE8E6851D1CCD7100B1AC61 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		9BE8E6871D1CF1F800B1AC61 /* PostInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostInstance.swift; sourceTree = "<group>"; };
 		9BECE3151D18404B001C61F1 /* Parsetagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parsetagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BECE3181D18404B001C61F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BECE31D1D18404B001C61F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				9B313F181D1A4D1500F99561 /* TimeAid.swift */,
+				9BE8E6831D1CA35100B1AC61 /* CommentAid.swift */,
 			);
 			name = FeatureAids;
 			sourceTree = "<group>";
@@ -123,8 +142,21 @@
 			isa = PBXGroup;
 			children = (
 				9B313F201D1B268900F99561 /* UserInstance.swift */,
+				9BE8E6871D1CF1F800B1AC61 /* PostInstance.swift */,
 			);
 			name = Instances;
+			sourceTree = "<group>";
+		};
+		9B313F221D1C784800F99561 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9B313F281D1C7D9F00F99561 /* SanFranciscoText-Bold.otf */,
+				9B313F2A1D1C7D9F00F99561 /* SanFranciscoText-Light.otf */,
+				9B313F2B1D1C7D9F00F99561 /* SanFranciscoText-Medium.otf */,
+				9B313F2C1D1C7D9F00F99561 /* SanFranciscoText-Regular.otf */,
+				9B313F2D1D1C7D9F00F99561 /* SanFranciscoText-Semibold.otf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 		9B70FEC31D18BA2900D65E58 /* Views */ = {
@@ -132,6 +164,7 @@
 			children = (
 				9B70FEC51D18BA5A00D65E58 /* PostTableViewCell.swift */,
 				9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */,
+				9BE8E6851D1CCD7100B1AC61 /* CommentTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -146,6 +179,7 @@
 				9BAB5E871D19198C0001A178 /* CameraViewController.swift */,
 				9BAB5E8C1D19939B0001A178 /* PostConfigurationViewController.swift */,
 				9B313F1A1D1AE3C900F99561 /* SettingsViewController.swift */,
+				9B6792D31D1C872500E71EA5 /* CommentsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -182,6 +216,7 @@
 		9BECE3171D18404B001C61F1 /* Parsetagram */ = {
 			isa = PBXGroup;
 			children = (
+				9BECE31C1D18404B001C61F1 /* Main.storyboard */,
 				9B313F1F1D1B265C00F99561 /* Instances */,
 				9B313F1E1D1B264E00F99561 /* FeatureAids */,
 				9BAB5E891D1991120001A178 /* Models */,
@@ -189,8 +224,8 @@
 				9B70FEC31D18BA2900D65E58 /* Views */,
 				9BECE3181D18404B001C61F1 /* AppDelegate.swift */,
 				9BECE32C1D18404B001C61F1 /* ParsetagramTests */,
+				9B313F221D1C784800F99561 /* Font */,
 				9BECE31F1D18404B001C61F1 /* Assets.xcassets */,
-				9BECE31C1D18404B001C61F1 /* Main.storyboard */,
 				9BECE3211D18404B001C61F1 /* LaunchScreen.storyboard */,
 				9BECE3241D18404B001C61F1 /* Info.plist */,
 			);
@@ -351,6 +386,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B313F2F1D1C7E7900F99561 /* SanFranciscoText-Bold.otf in Resources */,
+				9B313F311D1C7E7900F99561 /* SanFranciscoText-Light.otf in Resources */,
+				9B313F321D1C7E7900F99561 /* SanFranciscoText-Medium.otf in Resources */,
+				9B313F331D1C7E7900F99561 /* SanFranciscoText-Regular.otf in Resources */,
+				9B313F341D1C7E7900F99561 /* SanFranciscoText-Semibold.otf in Resources */,
 				9BECE3231D18404B001C61F1 /* LaunchScreen.storyboard in Resources */,
 				9BECE3201D18404B001C61F1 /* Assets.xcassets in Resources */,
 				9BECE31E1D18404B001C61F1 /* Main.storyboard in Resources */,
@@ -503,7 +543,9 @@
 			files = (
 				9B313F121D1A34F700F99561 /* InfiniteScrollActivityView.swift in Sources */,
 				9B313F191D1A4D1500F99561 /* TimeAid.swift in Sources */,
+				9B6792D41D1C872500E71EA5 /* CommentsViewController.swift in Sources */,
 				9BAB5E841D18FB830001A178 /* MeViewController.swift in Sources */,
+				9BE8E6881D1CF1F800B1AC61 /* PostInstance.swift in Sources */,
 				9BAB5E861D1911210001A178 /* PostDetailViewController.swift in Sources */,
 				9BECE3471D184872001C61F1 /* LoginViewController.swift in Sources */,
 				9BAB5E8B1D19912F0001A178 /* Post.swift in Sources */,
@@ -511,6 +553,8 @@
 				9BAB5E8D1D19939B0001A178 /* PostConfigurationViewController.swift in Sources */,
 				9BECE3191D18404B001C61F1 /* AppDelegate.swift in Sources */,
 				9BAB5E881D19198C0001A178 /* CameraViewController.swift in Sources */,
+				9BE8E6861D1CCD7100B1AC61 /* CommentTableViewCell.swift in Sources */,
+				9BE8E6841D1CA35100B1AC61 /* CommentAid.swift in Sources */,
 				9BECE34D1D18A971001C61F1 /* HomeViewController.swift in Sources */,
 				9B70FEC61D18BA5A00D65E58 /* PostTableViewCell.swift in Sources */,
 				9B313F1B1D1AE3C900F99561 /* SettingsViewController.swift in Sources */,

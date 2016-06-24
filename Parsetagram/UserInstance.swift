@@ -97,6 +97,7 @@ public class UserInstance {
             if error == nil {
                 if let imageData = imageData {
                     PROFILE_PICTURE = UIImage(data:imageData)
+                    print("By: UserInstance.swift \n --------> Everything loaded properly!")
                 }
             }
         }) //End getDataInBackgroundWithBlock()

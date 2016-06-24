@@ -159,6 +159,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         // Set the username label
         //UserInstance.loadUserProperties()
         usernameLabel.text = "@ \(UserInstance.USERNAME)"
+        postCountLabel.text = "\(UserInstance.POSTS_COUNT) Posts"
     }
 
     /*

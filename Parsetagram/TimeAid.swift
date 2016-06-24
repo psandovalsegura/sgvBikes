@@ -40,6 +40,56 @@ class TimeAid {
         
     }
     
+    static func getTimeDifferencePhrase(date1: String) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let currentDate = NSDate()
+        var currentDateString = String(currentDate)
+        for _ in 1...6 {
+            currentDateString.removeAtIndex(currentDateString.endIndex.predecessor())
+        }
+        
+        let date1Readable = dateFormatter.dateFromString(date1)!
+        let date2Readable = dateFormatter.dateFromString(currentDateString)!
+        let diffDateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second], fromDate: date1Readable, toDate: date2Readable, options: NSCalendarOptions.init(rawValue: 0))
+        
+        // "The difference between dates is: \(diffDateComponents.year) years, \(diffDateComponents.month) months, \(diffDateComponents.day) days, \(diffDateComponents.hour) hours, \(diffDateComponents.minute) minutes, \(diffDateComponents.second) seconds"
+        //Need to correct values when not in testing -- NOT ACCURATE
+        var dayCount = 0; dayCount += (diffDateComponents.year * 365); dayCount += (diffDateComponents.month * 30); dayCount += (diffDateComponents.day);
+        
+        var hourCount = diffDateComponents.hour
+        var minuteCount = diffDateComponents.minute
+        var secondCount = diffDateComponents.second
+        
+        if dayCount <= 0 {
+            //Not a day has elapsed yet
+            if hourCount <= 0 {
+                //Not an hour has elapsed yet
+                if minuteCount <= 0 {
+                    //Not a minute has elapsed yet
+                    if secondCount <= 0 {
+                        return "1 second ago"
+                    } else {
+                        return "\(secondCount) seconds ago"
+                    }
+                } else {
+                    return "\(minuteCount) minutes ago"
+                }
+                
+            } else {
+                return "\(hourCount) hours ago"
+            }
+            
+        } else if dayCount == 1 {
+            return "\(dayCount) day"
+        }
+        
+        return "\(dayCount) days"
+        
+    }
+    
     /* A truncated version of getTimeDifference() for the Home View Feed
      *
      */

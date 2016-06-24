@@ -113,6 +113,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //Get amount of days ago
             cell.daysAgoLabel.text = TimeAid.getFeedTimeDifference((post["formattedDateString"] as! String))
             
+            //Get first comment if one exists
+            let storage = post["comments"] as! [[String]]
+            if !storage.isEmpty {
+                cell.firstCommentsLabel.text = CommentAid.getLatestComment(storage).comment
+            } else {
+                cell.firstCommentsLabel.text = "💭 No Comments Yet. Be the first!"
+            }
+            
+            
         }
         
         return cell
@@ -219,6 +228,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toFullDetailView", let detailVC = segue.destinationViewController as? PostDetailViewController {
             detailVC.post = self.posts[(sender?.tag)!]
+        } else if segue.identifier == "toCommentsView", let commentsVC = segue.destinationViewController as? CommentsViewController {
+            commentsVC.post = self.posts[(sender?.tag)!]
         }
     }
  

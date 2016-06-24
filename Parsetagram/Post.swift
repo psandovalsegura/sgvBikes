@@ -45,6 +45,17 @@ class Post: NSObject {
         //Add array to represent users who have liked  -- UPGRADE
         //post["likesBy"]
         
+        //Add a comments array
+        /* Comments will be stored in a two dimensional array of strings
+         * Inner arrays will contain indexes as follows:
+         *
+         * 0 - username string
+         * 1 - timestamp string
+         * 2 - comment
+         */
+        let comments = [[String]]()
+        post["comments"] = comments
+        
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)
     }

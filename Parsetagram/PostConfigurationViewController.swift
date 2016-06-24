@@ -16,7 +16,7 @@ class PostConfigurationViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     
-    var imageTaken: UIImage? = nil
+    var imageTaken: UIImage!
     
     //Constants for use in resizing image
     let IMAGE_VIEW_WIDTH = 335
@@ -39,13 +39,16 @@ class PostConfigurationViewController: UIViewController {
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
         //Resize image in preparation for upload
-        let resizedImage = resize(self.imageTaken!, newSize: CGSize(width: IMAGE_VIEW_WIDTH, height: IMAGE_VIEW_HEIGHT))
+        let resizedImage = resize(self.imageTaken, newSize: CGSize(width: IMAGE_VIEW_WIDTH, height: IMAGE_VIEW_HEIGHT))
         Post.postUserImage(resizedImage, withCaption: captionField.text) { (success: Bool, error: NSError?) in
             ///End progress HUD
             MBProgressHUD.hideHUDForView(self.view, animated: true)
         }
         
-        print("By: PostConfigurationViewController.swift \n --------> Upload by \(PFUser.currentUser()?.username)")
+        //Increment count
+        UserInstance.CURRENT_USER.incrementKey("postsCount")
+        
+        print("By: PostConfigurationViewController.swift \n --------> Upload by \(UserInstance.USERNAME)")
         self.performSegueWithIdentifier("uploadToHomeSegue", sender: nil)
     }
     

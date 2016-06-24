@@ -34,8 +34,11 @@ class LoginViewController: UIViewController {
                 self.performSegueWithIdentifier("loginSegue", sender: nil)
             } else {
                 //Animate an alert for ERROR
-                let errorString = error!.userInfo["error"] as? String
-                self.errorAlert(errorString!)
+                if let errorString = error!.userInfo["error"] as? String {
+                    self.errorAlert(errorString)
+                } else {
+                    self.errorAlert("Something went wrong...")
+                }
                 
             }
         }
@@ -55,8 +58,12 @@ class LoginViewController: UIViewController {
                 UserInstance.createUser(newUser)
             } else {
                 //Animate an alert for ERROR
-                let errorString = error!.userInfo["error"] as? String
-                self.errorAlert(errorString!)
+                if let errorString = error!.userInfo["error"] as? String {
+                    self.errorAlert(errorString)
+                } else {
+                    self.errorAlert("Something went wrong...")
+                }
+                
                 /*
                 print(error?.localizedDescription)
                 print("Error code: \(error?.code)")
