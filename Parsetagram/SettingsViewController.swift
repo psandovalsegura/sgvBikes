@@ -36,9 +36,27 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     @IBAction func logOut(sender: AnyObject) {
-        PFUser.logOutInBackgroundWithBlock { (error: NSError?) in
-            // PFUser.currentUser() will now be nil
+        //Alert the user about logging out
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .ActionSheet)
+        let logoutAction = UIAlertAction(title: "Log Out", style: .Destructive) { (action) in
+            PFUser.logOutInBackgroundWithBlock { (error: NSError?) in
+                // PFUser.currentUser() will now be nil
+            }
+            self.performSegueWithIdentifier("logOutSegue", sender: nil)
+            
         }
+        // add the logout action to the alert controller
+        alertController.addAction(logoutAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // handle case of user canceling. Doing nothing will dismiss the view.
+        }
+        // add the cancel action to the alert controller
+        alertController.addAction(cancelAction)
+        presentViewController(alertController, animated: true) {
+            // optional code for what happens after the alert controller has finished presenting
+        }
+        
     }
     
     func imagePickerController(picker: UIImagePickerController,
@@ -56,7 +74,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         
         //Save the profile picture to the current user
         UserInstance.updateProfilePicture(self.newProfilePicture)
-        
+        alertUserOfProfileImageChange()
         
     }
     

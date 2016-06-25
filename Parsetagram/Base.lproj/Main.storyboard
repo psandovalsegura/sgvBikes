@@ -743,7 +743,6 @@
                                         </state>
                                         <connections>
                                             <action selector="logOut:" destination="93E-uU-i88" eventType="touchUpInside" id="Pcc-t0-LLk"/>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" id="5jG-TQ-ZZz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -833,6 +832,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="QO9-uo-spU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOutSegue" id="tVB-Ss-aSC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhR-im-ywS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
