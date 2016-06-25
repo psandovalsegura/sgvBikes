@@ -225,6 +225,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             tableView.deselectRowAtIndexPath(path, animated: true)
         }
+        
+        self.loadPostData("viewWillAppear")
     }
     
     // MARK: - Navigation

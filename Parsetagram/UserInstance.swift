@@ -19,6 +19,7 @@ public class UserInstance {
     public static var FOLLWER_COUNT: Int!
     public static var JOIN_DATE: String!
     public static var PROFILE_PICTURE: UIImage!
+    public static var PROFILE_PICTURE_PFFILE: PFFile!
     
     //Constants for use in resizing profile image
     public static let PROFILE_VIEW_WIDTH = 40
@@ -96,6 +97,7 @@ public class UserInstance {
         
         //Get a UIImage from a PFFile? object
         let imagePFFile = CURRENT_USER["profilePicture"] as! PFFile
+        PROFILE_PICTURE_PFFILE = imagePFFile
         imagePFFile.getDataInBackgroundWithBlock({
             (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {
@@ -119,7 +121,6 @@ public class UserInstance {
         let file = Post.getPFFileFromImage(defaultImage)
         return file
     }
-    
     
     
     /* ---------------------------PFUser object modification methods are below-------------------------------- */
@@ -162,6 +163,25 @@ public class UserInstance {
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+    /*
+    /* Attain the rounded profile picture of the username */
+    func getProfilePicture(username: String) {
+        let query = PFQuery(className: "_User")
+        query.whereKey("username", equalTo: username)
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) in
+            if error == nil {
+                
+                if let objects = objects {
+                    let currentCommenterProfile = objects[0]
+                    self.currentCommenterPF = currentCommenterProfile["profilePicture"] as! PFFile
+                }
+                
+            }
+        }
+    }*/
+    
+    
 }
 
 

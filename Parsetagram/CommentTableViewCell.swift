@@ -19,6 +19,9 @@ class CommentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        // Create circular profile picture views
+        self.commenterProfileView.layer.cornerRadius = self.commenterProfileView.frame.size.width / 2
+        commenterProfileView.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

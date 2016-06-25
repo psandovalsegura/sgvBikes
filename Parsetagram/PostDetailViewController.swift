@@ -48,7 +48,13 @@ class PostDetailViewController: UIViewController {
             daysAgoLabel.text = TimeAid.getTimeDifferencePhrase(post["formattedDateString"] as! String)
             
             //Get the likes count
-            likesLabel.text = "\(post["likesCount"]) Likes"
+            let likesCount = post["likesCount"] as! Int
+            if likesCount == 1 {
+                likesLabel.text = "1 Like"
+            } else {
+                likesLabel.text = "\(post["likesCount"]) Likes"
+            }
+            
             
             //Get the caption
             captionLabel.text = post["caption"] as? String

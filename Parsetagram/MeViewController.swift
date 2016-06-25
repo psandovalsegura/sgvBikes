@@ -14,7 +14,7 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postCountLabel: UILabel!
-    @IBOutlet weak var followersCountLabel: UILabel!
+    @IBOutlet weak var joinDateLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
@@ -156,6 +156,8 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         //UserInstance.loadUserProperties()
         usernameLabel.text = "@ \(UserInstance.USERNAME)"
         postCountLabel.text = "\(UserInstance.POSTS_COUNT) Posts"
+        joinDateLabel.text = "Joined \(TimeAid.getReadableDateFromFormat(UserInstance.JOIN_DATE))"
+        loadPostData("viewWillAppear")
     }
 
     /*

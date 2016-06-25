@@ -37,7 +37,6 @@ class PostTableViewCell: UITableViewCell {
         // Create circular profile picture views
         self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2
         profilePictureView.clipsToBounds = true
-        profilePictureView.layer.borderColor = UIColor.blackColor().CGColor
         
         //Set up the clock picture
         clockImageView.image = UIImage(named: "daysagopng")

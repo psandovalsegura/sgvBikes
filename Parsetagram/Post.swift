@@ -56,6 +56,10 @@ class Post: NSObject {
         let comments = [[String]]()
         post["comments"] = comments
         
+        //Store the commenter profile pictures
+        let commenterProfilePictures = [PFFile]()
+        post["commenterProfilePictures"] = commenterProfilePictures
+        
         // Save object (following function will save the object in Parse asynchronously)
         post.saveInBackgroundWithBlock(completion)
     }

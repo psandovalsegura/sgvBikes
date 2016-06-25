@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
 
 class CommentsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -23,12 +24,17 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     var usernames: [String]!
     var timestamps: [String]!
     var comments: [String]!
+    var commenterPFFiles: [PFFile]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Create circular profile picture view
+        self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2
+        profilePictureView.clipsToBounds = true
         
         loadControllerData()
         
@@ -46,6 +52,18 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.commentLabel.text = self.comments[indexPath.row]
         cell.timeAgoLabel.text = TimeAid.getTimeDifferencePhrase(self.timestamps[indexPath.row])
         
+        //Set profile pictures
+        let file = self.commenterPFFiles[indexPath.row]
+        file.getDataInBackgroundWithBlock({
+            (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                if let imageData = imageData {
+                    let image = UIImage(data:imageData)
+                    cell.commenterProfileView.image = image
+                }
+            }
+        })
+        
         //print("By: CommentsViewController.swift \n --------> index path.row = \(indexPath.row) and the comment is = \(self.comments[indexPath.row])")
         //Allow for profile picture in comments -- UPGRADE
         return cell
@@ -53,11 +71,19 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     @IBAction func onSend(sender: AnyObject) {
+        //Start progress HUD
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
         if self.commentTextField.text != nil && self.commentTextField != "" {
             //Update the users, comments, timestamps before packing
             self.usernames.append(UserInstance.USERNAME)
             self.timestamps.append(TimeAid.getFormattedDate())
             self.comments.append(self.commentTextField.text!)
+            
+            //Put the commenter profile image (as PFFile) in the commenter profile pictures storage of the Post object
+            var commenterProfilePFFiles = self.post["commenterProfilePictures"] as! [PFFile]
+            commenterProfilePFFiles.append(UserInstance.PROFILE_PICTURE_PFFILE)
+            self.post["commenterProfilePictures"] = commenterProfilePFFiles
             
             //Clear the text field and stop editing
             self.commentTextField.text = ""
@@ -70,6 +96,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             self.post.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) in
                 self.loadControllerData()
                 self.tableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
             })
             
         }
@@ -90,6 +117,9 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
                     }
                 }
             })
+            
+            //Get commenter PFFiles to recreate images
+            self.commenterPFFiles = post["commenterProfilePictures"] as! [PFFile]
             
             //Get the caption
             self.captionLabel.text = post["caption"] as? String
@@ -121,6 +151,8 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         } else {
             usernameLabel.text = "Error..."
         }
+        
+        
     }
     
     @IBAction func onTap(sender: AnyObject) {

@@ -61,7 +61,16 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     
-    
+    func alertUserOfProfileImageChange() {
+        let alertController = UIAlertController(title:"Success",  message: "Your profile image was changed! Post or comment to try it out.", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title:"OK", style: .Cancel) { (action) in
+            //code is run when user chooses ok
+        }
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true) {
+            //optional code that is run after the alert has finished presenting
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {
