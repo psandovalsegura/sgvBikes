@@ -23,8 +23,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         getPictureFromCamera(true) //The first time the user selects the camera, they will be prompted with the ability to take a photo
     }
     
-    func imagePickerController(picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
         //let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
@@ -34,33 +34,33 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.imageTaken = editedImage
         
         // Dismiss UIImagePickerController to go back to your original view controller
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
         //Try to move to next view controller
-        self.performSegueWithIdentifier("configurePost", sender: nil)
+        self.performSegue(withIdentifier: "configurePost", sender: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         //getPictureFromCamera(true)
     }
     
-    @IBAction func takeCameraPhoto(sender: AnyObject) {
+    @IBAction func takeCameraPhoto(_ sender: AnyObject) {
         getPictureFromCamera(true)
     }
     
-    @IBAction func takeLibraryPhoto(sender: AnyObject) {
+    @IBAction func takeLibraryPhoto(_ sender: AnyObject) {
         getPictureFromCameraRoll(true)
     }
     
-    func getPictureFromCamera(animated: Bool) {
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
-        self.presentViewController(imagePickerController, animated: true, completion: nil)
+    func getPictureFromCamera(_ animated: Bool) {
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
-    func getPictureFromCameraRoll(animated: Bool) {
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(imagePickerController, animated: true, completion: nil)
+    func getPictureFromCameraRoll(_ animated: Bool) {
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,8 +70,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     //Use code below if deciding to segue to new view controller
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let postConfigurationViewController = segue.destinationViewController as! PostConfigurationViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let postConfigurationViewController = segue.destination as! PostConfigurationViewController
         postConfigurationViewController.imageTaken = self.imageTaken
         
     }

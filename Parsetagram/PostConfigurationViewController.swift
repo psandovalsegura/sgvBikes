@@ -34,54 +34,54 @@ class PostConfigurationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onUpload(sender: AnyObject) {
+    @IBAction func onUpload(_ sender: AnyObject) {
         //Start progress HUD, ends in viewDidDisappear()
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
         //Resize image in preparation for upload
         let resizedImage = resize(self.imageTaken, newSize: CGSize(width: IMAGE_VIEW_WIDTH, height: IMAGE_VIEW_HEIGHT))
-        Post.postUserImage(resizedImage, withCaption: captionField.text) { (success: Bool, error: NSError?) in
+        Post.postUserImage(resizedImage, withCaption: captionField.text) { (success, error) in
             ///End progress HUD
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
         
         //Increment count
         UserInstance.CURRENT_USER.incrementKey("postsCount")
         
         //Save
-        UserInstance.CURRENT_USER.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
+        UserInstance.CURRENT_USER.saveInBackground { (success, error) in
             UserInstance.loadUserProperties()
         }
         
         print("By: PostConfigurationViewController.swift \n --------> Upload by \(UserInstance.USERNAME)")
-        self.performSegueWithIdentifier("uploadToHomeSegue", sender: nil)
+        self.performSegue(withIdentifier: "uploadToHomeSegue", sender: nil)
     }
     
-    @IBAction func onCancel(sender: AnyObject) {
-        self.performSegueWithIdentifier("cancelToHomeSegue", sender: nil)
+    @IBAction func onCancel(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "cancelToHomeSegue", sender: nil)
     }
 
-    @IBAction func onTap(sender: AnyObject) {
+    @IBAction func onTap(_ sender: AnyObject) {
         self.view.endEditing(true)
     }
     
-    func resize(image: UIImage, newSize: CGSize) -> UIImage {
-        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
-        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+    func resize(_ image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
         resizeImageView.image = image
         
         UIGraphicsBeginImageContext(resizeImageView.frame.size)
-        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
         
         //End progress HUD, which began in onUpload()
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
     
     /*

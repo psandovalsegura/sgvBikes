@@ -29,14 +29,14 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         tableView.delegate = self
         
         //Initially load data
-        self.loadPostData("initial")
+        self.loadPostData("initial" as AnyObject)
         
-        refreshControl.addTarget(self, action: #selector(loadPostData(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        refreshControl.backgroundColor = UIColor.clearColor()
-        refreshControl.tintColor = UIColor.blackColor()
-        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
-        tableView.insertSubview(refreshControl, atIndex: 0)
-        loadPostData("viewDidLoad")
+        refreshControl.addTarget(self, action: #selector(loadPostData(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.backgroundColor = UIColor.clear
+        refreshControl.tintColor = UIColor.black
+        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.black])
+        tableView.insertSubview(refreshControl, at: 0)
+        loadPostData("viewDidLoad" as AnyObject)
         /*
         print(UserInstance.USERNAME)
         print(UserInstance.FOLLWER_COUNT)
@@ -44,12 +44,12 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         print(UserInstance.POSTS_COUNT)*/
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.myPosts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         
         let post = self.myPosts[indexPath.row]
         
@@ -58,8 +58,8 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
             
             let postImagePFFile = postImage as! PFFile
             //If the image could be attained, then likely the comments, likes, caption, etc. as well
-            postImagePFFile.getDataInBackgroundWithBlock({
-                (imageData: NSData?, error: NSError?) -> Void in
+            postImagePFFile.getDataInBackground(block: {
+                (imageData, error) in
                 if error == nil {
                     if let imageData = imageData {
                         let image = UIImage(data:imageData)
@@ -85,8 +85,8 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 
                 let postImagePFFile = profileImage as! PFFile
                 
-                postImagePFFile.getDataInBackgroundWithBlock({
-                    (imageData: NSData?, error: NSError?) -> Void in
+                postImagePFFile.getDataInBackground(block: {
+                    (imageData, error) in
                     if error == nil {
                         if let imageData = imageData {
                             let image = UIImage(data:imageData)
@@ -105,20 +105,20 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         return cell
     }
     
-    func loadPostData(point: AnyObject) {
+    func loadPostData(_ point: AnyObject) {
         //ProgressHUD initialized
-        if (String(point) == "initial") {
+        if (String(describing: point) == "initial") {
             // Display HUD right before the request is made
             print("By: MeViewController.swift \n --------> initial request to load")
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            MBProgressHUD.showAdded(to: self.view, animated: true)
         }
         
         let query = PFQuery(className: "Post")
-        query.orderByDescending("createdAt")
-        query.whereKey("username", equalTo: PFUser.currentUser()!.username!)
+        query.order(byDescending: "createdAt")
+        query.whereKey("username", equalTo: PFUser.current()!.username!)
         //query.whereKey("_p_author", equalTo: <#T##AnyObject#>) //try this query for safety in better release
         
-        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) in
+        query.findObjectsInBackground { (objects, error) in
             if error == nil {
                 
                 //print("successfully retreived")
@@ -140,9 +140,9 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
          print(number)
          }*/
         
-        if (String(point) == "initial") {
+        if (String(describing: point) == "initial") {
             // Hide HUD once the network request comes back (must be done on main UI thread)
-            MBProgressHUD.hideHUDForView(self.view, animated: true)
+            MBProgressHUD.hide(for: self.view, animated: true)
             print("By: MeViewController.swift \n --------> end initial request to load")
         }
     }
@@ -150,14 +150,14 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
 
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         // Set the username label
         //UserInstance.loadUserProperties()
         usernameLabel.text = "@ \(UserInstance.USERNAME)"
         postCountLabel.text = "\(UserInstance.POSTS_COUNT) Posts"
         joinDateLabel.text = "Joined \(TimeAid.getReadableDateFromFormat(UserInstance.JOIN_DATE))"
-        loadPostData("viewWillAppear")
+        loadPostData("viewWillAppear" as AnyObject)
     }
 
     /*

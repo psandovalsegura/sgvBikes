@@ -10,24 +10,24 @@ import Foundation
 import Parse
 import UIKit
 
-public class UserInstance {
-    public static var SUCCESSFUL_ID = false //Testing purposes
+open class UserInstance {
+    open static var SUCCESSFUL_ID = false //Testing purposes
     
-    public static var CURRENT_USER: PFUser!
-    public static var USERNAME: String!
-    public static var POSTS_COUNT: Int!
-    public static var FOLLWER_COUNT: Int!
-    public static var JOIN_DATE: String!
-    public static var PROFILE_PICTURE: UIImage!
-    public static var PROFILE_PICTURE_PFFILE: PFFile!
+    open static var CURRENT_USER: PFUser!
+    open static var USERNAME: String!
+    open static var POSTS_COUNT: Int!
+    open static var FOLLWER_COUNT: Int!
+    open static var JOIN_DATE: String!
+    open static var PROFILE_PICTURE: UIImage!
+    open static var PROFILE_PICTURE_PFFILE: PFFile!
     
     //Constants for use in resizing profile image
-    public static let PROFILE_VIEW_WIDTH = 40
-    public static let PROFILE_VIEW_HEIGHT = 40
+    open static let PROFILE_VIEW_WIDTH = 40
+    open static let PROFILE_VIEW_HEIGHT = 40
     
-    public static var POSTS: [PFObject]!
+    open static var POSTS: [PFObject]!
     
-    public static var HOME_VIEW_POSTS = [PFObject]()
+    open static var HOME_VIEW_POSTS = [PFObject]()
     
     /* Modification of PFUser object to add more key-value pairs - an implementation of ParseUser.swift
      * Used during sign-up
@@ -36,9 +36,9 @@ public class UserInstance {
      *
      */
     
-    static func createUser(newUser: PFUser) {
+    static func createUser(_ newUser: PFUser) {
         // Add relevant fields to the object
-        newUser["author"] = PFUser.currentUser() // Pointer column type that points to PFUser
+        newUser["author"] = PFUser.current() // Pointer column type that points to PFUser
         newUser["postsCount"] = 0
         newUser["followerCount"] = 0
         
@@ -46,7 +46,7 @@ public class UserInstance {
         newUser["allPosts"] = [PFObject]()
         
         //Add username
-        let usernameString = newUser["author"].username!!
+        let usernameString = (newUser["author"] as AnyObject).username!!
         newUser["username"] = usernameString
         
         //Add user join Date and Time
@@ -56,7 +56,7 @@ public class UserInstance {
         newUser["profilePicture"] = loadDefaultProfileImageFile()
         
         //Save the object (following function will save the object to Parse asynchronously)
-        newUser.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
+        newUser.saveInBackground { (success, error) in
             if success {
                 //The modified PFUser has been saved
                 CURRENT_USER = newUser
@@ -76,7 +76,7 @@ public class UserInstance {
      *
      */
     
-    static func loadUser(user: PFUser) {
+    static func loadUser(_ user: PFUser) {
         CURRENT_USER = user
         loadUserProperties()
     }
@@ -98,8 +98,8 @@ public class UserInstance {
         //Get a UIImage from a PFFile? object
         let imagePFFile = CURRENT_USER["profilePicture"] as! PFFile
         PROFILE_PICTURE_PFFILE = imagePFFile
-        imagePFFile.getDataInBackgroundWithBlock({
-            (imageData: NSData?, error: NSError?) -> Void in
+        imagePFFile.getDataInBackground(block: {
+            (imageData, error) -> Void in
             if error == nil {
                 if let imageData = imageData {
                     PROFILE_PICTURE = UIImage(data:imageData)
@@ -135,7 +135,7 @@ public class UserInstance {
         
     }
     
-    static func updateProfilePicture(newProfileImage: UIImage) {
+    static func updateProfilePicture(_ newProfileImage: UIImage) {
         
         //Resize image in preparation for upload
         let resizedImage = resize(newProfileImage, newSize: CGSize(width: PROFILE_VIEW_WIDTH, height: PROFILE_VIEW_HEIGHT))
@@ -144,7 +144,7 @@ public class UserInstance {
         UserInstance.CURRENT_USER["profilePicture"] = Post.getPFFileFromImage(resizedImage)
         
         //Save
-        UserInstance.CURRENT_USER.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
+        UserInstance.CURRENT_USER.saveInBackground { (success, error) in
             UserInstance.loadUserProperties()
         }
     }
@@ -152,16 +152,16 @@ public class UserInstance {
     
     /*-----------------------------Helper functions----------------------------*/
    
-    static func resize(image: UIImage, newSize: CGSize) -> UIImage {
-        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
-        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+    static func resize(_ image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.scaleAspectFill
         resizeImageView.image = image
         
         UIGraphicsBeginImageContext(resizeImageView.frame.size)
-        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        resizeImageView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
     
     /*

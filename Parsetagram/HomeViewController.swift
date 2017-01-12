@@ -30,9 +30,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.delegate = self
         
         // Set up Infinite Scroll loading indicator
-        let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+        let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
         loadingMoreView = InfiniteScrollActivityView(frame: frame)
-        loadingMoreView!.hidden = true
+        loadingMoreView!.isHidden = true
         tableView.addSubview(loadingMoreView!)
         
         var insets = tableView.contentInset;
@@ -40,23 +40,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.contentInset = insets
         
         //Refresh control setup
-        refreshControl.addTarget(self, action: #selector(loadPostData(_:)), forControlEvents: UIControlEvents.ValueChanged)
-        refreshControl.backgroundColor = UIColor.clearColor()
-        refreshControl.tintColor = UIColor.blackColor()
-        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.blackColor()])
-        tableView.insertSubview(refreshControl, atIndex: 0)
+        refreshControl.addTarget(self, action: #selector(loadPostData(_:)), for: UIControlEvents.valueChanged)
+        refreshControl.backgroundColor = UIColor.clear
+        refreshControl.tintColor = UIColor.black
+        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.black])
+        tableView.insertSubview(refreshControl, at: 0)
         
         //Initially load data
-        self.loadPostData("initial")
+        self.loadPostData("initial" as AnyObject)
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("postCell", forIndexPath: indexPath) as! PostTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
         
         cell.imageButton.tag = indexPath.row
         cell.likeButton.tag = indexPath.row
@@ -71,8 +71,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let postImagePFFile = postImage as! PFFile
             
-            postImagePFFile.getDataInBackgroundWithBlock({
-                (imageData: NSData?, error: NSError?) -> Void in
+            postImagePFFile.getDataInBackground(block: {
+                (imageData, error) -> Void in
                 if error == nil {
                     if let imageData = imageData {
                         let image = UIImage(data:imageData)
@@ -85,10 +85,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.captionLabel.text = post["caption"] as? String
             
             //Get the likes count
-            cell.likesLabel.text = "\(post["likesCount"]) Likes"
+            cell.likesLabel.text = "\(post["likesCount"]!) Likes"
             
             //Get the comments count
-            cell.commentsCountLabel.text = "\(post["commentsCount"])"
+            cell.commentsCountLabel.text = "\(post["commentsCount"]!)"
             
             //Get the author
             cell.usernameLabel.text = post["username"] as? String
@@ -101,8 +101,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
                 let postImagePFFile = profileImage as! PFFile
                 
-                postImagePFFile.getDataInBackgroundWithBlock({
-                    (imageData: NSData?, error: NSError?) -> Void in
+                postImagePFFile.getDataInBackground(block: {
+                    (imageData, error) -> Void in
                     if error == nil {
                         if let imageData = imageData {
                             let image = UIImage(data:imageData)
@@ -132,7 +132,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Handle scroll behavior here
         if (!isMoreDataLoading) {
             
@@ -141,39 +141,39 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
             
             // When the user has scrolled past the threshold, start requesting
-            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
                 isMoreDataLoading = true
                 
                 // Update position of loadingMoreView, and start loading indicator
-                let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+                let frame = CGRect(x: 0, y: tableView.contentSize.height, width: tableView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
                 loadingMoreView?.frame = frame
                 loadingMoreView!.startAnimating()
                 
                 //Load more results ...
-                loadPostData("scrollViewDidScroll")
+                loadPostData("scrollViewDidScroll" as AnyObject)
             }
             
         }
     }
     
-    func loadPostData(point: AnyObject) {
+    func loadPostData(_ point: AnyObject) {
         //ProgressHUD initialized
-        if (String(point) == "initial") {
+        if (String(describing: point) == "initial") {
             // Display HUD right before the request is made
             print("By: HomeViewController.swift \n --------> initial request to load")
-            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            MBProgressHUD.showAdded(to: self.view, animated: true)
         }
         
         let query = PFQuery(className: "Post")
-        query.orderByDescending("createdAt")
+        query.order(byDescending: "createdAt")
         query.limit = QUERY_LIMIT
         
-        if String(point) == "scrollViewDidScroll" {
+        if String(describing: point) == "scrollViewDidScroll" {
             //User reached the bottom of the feed, load NEW posts
             query.skip = QUERY_LIMIT
         }
         
-        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) in
+        query.findObjectsInBackground { (objects, error) in
             if error == nil {
                 
                 //print("successfully retreived")
@@ -184,7 +184,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.loadingMoreView!.stopAnimating()
                 
                 if let objects = objects {
-                    if String(point) == "scrollViewDidScroll" {
+                    if String(describing: point) == "scrollViewDidScroll" {
                         self.posts += objects
                         UserInstance.HOME_VIEW_POSTS += objects
                     } else {
@@ -198,9 +198,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 //print("there was an error")
             }
             
-            if (String(point) == "initial") {
+            if (String(describing: point) == "initial") {
                 // Hide HUD once the network request comes back (must be done on main UI thread)
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                MBProgressHUD.hide(for: self.view, animated: true)
                 print("By: HomeViewController.swift \n --------> end initial request to load")
             }
             
@@ -218,25 +218,25 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // inside the completion block above.
     
     //Post Cell Deselection -  not handled by table view
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if let path = tableView.indexPathForSelectedRow {
             
-            tableView.deselectRowAtIndexPath(path, animated: true)
+            tableView.deselectRow(at: path, animated: true)
         }
         
-        self.loadPostData("viewWillAppear")
+        self.loadPostData("viewWillAppear" as AnyObject)
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toFullDetailView", let detailVC = segue.destinationViewController as? PostDetailViewController {
-            detailVC.post = self.posts[(sender?.tag)!]
-        } else if segue.identifier == "toCommentsView", let commentsVC = segue.destinationViewController as? CommentsViewController {
-            commentsVC.post = self.posts[(sender?.tag)!]
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFullDetailView", let detailVC = segue.destination as? PostDetailViewController {
+            detailVC.post = self.posts[((sender as AnyObject).tag)!]
+        } else if segue.identifier == "toCommentsView", let commentsVC = segue.destination as? CommentsViewController {
+            commentsVC.post = self.posts[((sender as AnyObject).tag)!]
         }
     }
  

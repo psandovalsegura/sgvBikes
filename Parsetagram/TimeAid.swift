@@ -17,47 +17,47 @@ class TimeAid {
      date1: is a string representing the date and time in the format detailed above
      */
     
-    static func getTimeDifference(date1: String) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
+    static func getTimeDifference(_ date1: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        let currentDate = NSDate()
-        var currentDateString = String(currentDate)
+        let currentDate = Date()
+        var currentDateString = String(describing: currentDate)
         for _ in 1...6 {
-            currentDateString.removeAtIndex(currentDateString.endIndex.predecessor())
+            currentDateString.remove(at: currentDateString.characters.index(before: currentDateString.endIndex))
         }
         
-        let date1Readable = dateFormatter.dateFromString(date1)!
-        let date2Readable = dateFormatter.dateFromString(currentDateString)!
-        let diffDateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second], fromDate: date1Readable, toDate: date2Readable, options: NSCalendarOptions.init(rawValue: 0))
+        let date1Readable = dateFormatter.date(from: date1)!
+        let date2Readable = dateFormatter.date(from: currentDateString)!
+        let diffDateComponents = (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day, NSCalendar.Unit.hour, NSCalendar.Unit.minute, NSCalendar.Unit.second], from: date1Readable, to: date2Readable, options: NSCalendar.Options.init(rawValue: 0))
         
         // "The difference between dates is: \(diffDateComponents.year) years, \(diffDateComponents.month) months, \(diffDateComponents.day) days, \(diffDateComponents.hour) hours, \(diffDateComponents.minute) minutes, \(diffDateComponents.second) seconds"
         //Need to correct values when not in testing -- NOT ACCURATE
-        var dayCount = 0; dayCount += (diffDateComponents.year * 365); dayCount += (diffDateComponents.month * 30); dayCount += (diffDateComponents.day);
+        var dayCount = 0; dayCount += (diffDateComponents.year! * 365); dayCount += (diffDateComponents.month! * 30); dayCount += (diffDateComponents.day)!;
         
         return "\(dayCount) days"
         
     }
     
-    static func getTimeDifferencePhrase(date1: String) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
+    static func getTimeDifferencePhrase(_ date1: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        let currentDate = NSDate()
-        var currentDateString = String(currentDate)
+        let currentDate = Date()
+        var currentDateString = String(describing: currentDate)
         for _ in 1...6 {
-            currentDateString.removeAtIndex(currentDateString.endIndex.predecessor())
+            currentDateString.remove(at: currentDateString.characters.index(before: currentDateString.endIndex))
         }
         
-        let date1Readable = dateFormatter.dateFromString(date1)!
-        let date2Readable = dateFormatter.dateFromString(currentDateString)!
-        let diffDateComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second], fromDate: date1Readable, toDate: date2Readable, options: NSCalendarOptions.init(rawValue: 0))
+        let date1Readable = dateFormatter.date(from: date1)!
+        let date2Readable = dateFormatter.date(from: currentDateString)!
+        let diffDateComponents = (Calendar.current as NSCalendar).components([NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day, NSCalendar.Unit.hour, NSCalendar.Unit.minute, NSCalendar.Unit.second], from: date1Readable, to: date2Readable, options: NSCalendar.Options.init(rawValue: 0))
         
         // "The difference between dates is: \(diffDateComponents.year) years, \(diffDateComponents.month) months, \(diffDateComponents.day) days, \(diffDateComponents.hour) hours, \(diffDateComponents.minute) minutes, \(diffDateComponents.second) seconds"
         //Need to correct values when not in testing -- NOT ACCURATE
-        var dayCount = 0; dayCount += (diffDateComponents.year * 365); dayCount += (diffDateComponents.month * 30); dayCount += (diffDateComponents.day);
+        var dayCount = 0; dayCount += (diffDateComponents.year! * 365); dayCount += (diffDateComponents.month! * 30); dayCount += (diffDateComponents.day)!;
         
         let hourCount = diffDateComponents.hour
         let minuteCount = diffDateComponents.minute
@@ -65,11 +65,11 @@ class TimeAid {
         
         if dayCount <= 0 {
             //Not a day has elapsed yet
-            if hourCount <= 0 {
+            if hourCount! <= 0 {
                 //Not an hour has elapsed yet
-                if minuteCount <= 0 {
+                if minuteCount! <= 0 {
                     //Not a minute has elapsed yet
-                    if secondCount <= 0 {
+                    if secondCount! <= 0 {
                         return "now"
                     } else if secondCount == 1 {
                         return "1 second ago"
@@ -101,10 +101,10 @@ class TimeAid {
      *
      */
     
-    static func getFeedTimeDifference(date1: String) -> String {
+    static func getFeedTimeDifference(_ date1: String) -> String {
         var timeDifferenceString = getTimeDifference(date1)
         for _ in 1...3 {
-            timeDifferenceString.removeAtIndex(timeDifferenceString.endIndex.predecessor())
+            timeDifferenceString.remove(at: timeDifferenceString.characters.index(before: timeDifferenceString.endIndex))
         }
         
         return timeDifferenceString
@@ -112,10 +112,10 @@ class TimeAid {
     
     /* Returns a string of the date in the format: Ex. "2016-06-22 04:08:11"  */
     static func getFormattedDate() -> String {
-        let currentDate = NSDate()
-        var currentDateString = String(currentDate)
+        let currentDate = Date()
+        var currentDateString = String(describing: currentDate)
         for _ in 1...6 {
-            currentDateString.removeAtIndex(currentDateString.endIndex.predecessor())
+            currentDateString.remove(at: currentDateString.characters.index(before: currentDateString.endIndex))
         }
         return currentDateString
     }
@@ -124,14 +124,14 @@ class TimeAid {
     /* Returns a string of the date in the format: Ex. "Jun 21, 2016, 9:40 PM" 
        Receiving a string in the format: "yyyy-MM-dd HH:mm:ss" 
      */
-    static func getReadableDateFromFormat(formattedDate: String) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
+    static func getReadableDateFromFormat(_ formattedDate: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        let tryingDate = dateFormatter.dateFromString(formattedDate)!
+        let tryingDate = dateFormatter.date(from: formattedDate)!
         
-        let timestamp = NSDateFormatter.localizedStringFromDate(tryingDate, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        let timestamp = DateFormatter.localizedString(from: tryingDate, dateStyle: .medium, timeStyle: .short)
         return timestamp
     }
     
@@ -140,7 +140,7 @@ class TimeAid {
      Output string format example: Jun 21, 2016, 9:40 PM
      */
     static func getTimestamp() -> String{
-        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        let timestamp = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
         
         return timestamp
     }

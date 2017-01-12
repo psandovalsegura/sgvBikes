@@ -24,43 +24,43 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     
-    @IBAction func changeProfilePicture(sender: AnyObject) {
+    @IBAction func changeProfilePicture(_ sender: AnyObject) {
         getPictureFromCameraRoll(true)
     }
     
-    func getPictureFromCameraRoll(animated: Bool) {
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(imagePickerController, animated: true, completion: nil)
+    func getPictureFromCameraRoll(_ animated: Bool) {
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(imagePickerController, animated: true, completion: nil)
         
     }
     
     
-    @IBAction func logOut(sender: AnyObject) {
+    @IBAction func logOut(_ sender: AnyObject) {
         //Alert the user about logging out
-        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .ActionSheet)
-        let logoutAction = UIAlertAction(title: "Log Out", style: .Destructive) { (action) in
-            PFUser.logOutInBackgroundWithBlock { (error: NSError?) in
+        let alertController = UIAlertController(title: "Log Out", message: "Are you sure you want to log out?", preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "Log Out", style: .destructive) { (action) in
+            PFUser.logOutInBackground { (error) in
                 // PFUser.currentUser() will now be nil
             }
-            self.performSegueWithIdentifier("logOutSegue", sender: nil)
+            self.performSegue(withIdentifier: "logOutSegue", sender: nil)
             
         }
         // add the logout action to the alert controller
         alertController.addAction(logoutAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             // handle case of user canceling. Doing nothing will dismiss the view.
         }
         // add the cancel action to the alert controller
         alertController.addAction(cancelAction)
-        presentViewController(alertController, animated: true) {
+        present(alertController, animated: true) {
             // optional code for what happens after the alert controller has finished presenting
         }
         
     }
     
-    func imagePickerController(picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get the image captured by the UIImagePickerController
         //let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
@@ -70,7 +70,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         self.newProfilePicture = editedImage
         
         // Dismiss UIImagePickerController to go back to your original view controller
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
         //Save the profile picture to the current user
         UserInstance.updateProfilePicture(self.newProfilePicture)
@@ -80,12 +80,12 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
     func alertUserOfProfileImageChange() {
-        let alertController = UIAlertController(title:"Success",  message: "Your profile image was changed! Post or comment to try it out.", preferredStyle: .Alert)
-        let okAction = UIAlertAction(title:"OK", style: .Cancel) { (action) in
+        let alertController = UIAlertController(title:"Success",  message: "Your profile image was changed! Post or comment to try it out.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title:"OK", style: .cancel) { (action) in
             //code is run when user chooses ok
         }
         alertController.addAction(okAction)
-        self.presentViewController(alertController, animated: true) {
+        self.present(alertController, animated: true) {
             //optional code that is run after the alert has finished presenting
         }
     }

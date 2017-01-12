@@ -41,12 +41,12 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.comments.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("commentCell", forIndexPath: indexPath) as! CommentTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell", for: indexPath) as! CommentTableViewCell
         //Fill labels
         cell.usernameLabel.text = self.usernames[indexPath.row]
         cell.commentLabel.text = self.comments[indexPath.row]
@@ -54,15 +54,14 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //Set profile pictures
         let file = self.commenterPFFiles[indexPath.row]
-        file.getDataInBackgroundWithBlock({
-            (imageData: NSData?, error: NSError?) -> Void in
+        file.getDataInBackground { (imageData, error) in
             if error == nil {
                 if let imageData = imageData {
                     let image = UIImage(data:imageData)
                     cell.commenterProfileView.image = image
                 }
             }
-        })
+        }
         
         //print("By: CommentsViewController.swift \n --------> index path.row = \(indexPath.row) and the comment is = \(self.comments[indexPath.row])")
         //Allow for profile picture in comments -- UPGRADE
@@ -70,11 +69,11 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     
-    @IBAction func onSend(sender: AnyObject) {
+    @IBAction func onSend(_ sender: AnyObject) {
         //Start progress HUD
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         
-        if self.commentTextField.text != nil && self.commentTextField != "" {
+        if self.commentTextField.text != nil && self.commentTextField.text != "" {
             //Update the users, comments, timestamps before packing
             self.usernames.append(UserInstance.USERNAME)
             self.timestamps.append(TimeAid.getFormattedDate())
@@ -93,10 +92,10 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             let updatedStorage = CommentAid.repackCommentArray(self.usernames, timestamps: self.timestamps, comments: self.comments)
             self.post["comments"] = updatedStorage
             self.post.incrementKey("commentsCount")
-            self.post.saveInBackgroundWithBlock({ (success: Bool, error: NSError?) in
+            self.post.saveInBackground(block: { (success, error) in
                 self.loadControllerData()
                 self.tableView.reloadData()
-                MBProgressHUD.hideHUDForView(self.view, animated: true)
+                MBProgressHUD.hide(for: self.view, animated: true)
             })
             
         }
@@ -108,8 +107,8 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let postImagePFFile = postImage as! PFFile
             
-            postImagePFFile.getDataInBackgroundWithBlock({
-                (imageData: NSData?, error: NSError?) -> Void in
+            postImagePFFile.getDataInBackground(block: {
+                (imageData, error) in
                 if error == nil {
                     if let imageData = imageData {
                         let image = UIImage(data:imageData)
@@ -155,7 +154,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
-    @IBAction func onTap(sender: AnyObject) {
+    @IBAction func onTap(_ sender: AnyObject) {
         self.view.endEditing(true)
     }
     

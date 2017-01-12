@@ -21,19 +21,19 @@ class Post: NSObject {
      - parameter caption: Caption text input by the user
      - parameter completion: Block to be executed after save operation is complete
      */
-    class func postUserImage(image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
+    class func postUserImage(_ image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
         // Create Parse object PFObject
         let post = PFObject(className: "Post")
         
         // Add relevant fields to the object
         post["media"] = getPFFileFromImage(image) // PFFile column type
-        post["author"] = PFUser.currentUser()// Pointer column type that points to PFUser
+        post["author"] = PFUser.current()// Pointer column type that points to PFUser
         post["caption"] = caption
         post["likesCount"] = 0
         post["commentsCount"] = 0
         
         //Add username
-        let usernameString = post["author"].username!!
+        let usernameString = (post["author"] as AnyObject).username!!
         post["username"] = usernameString
         
         //Add a date and time of creation in processable format
@@ -61,7 +61,7 @@ class Post: NSObject {
         post["commenterProfilePictures"] = commenterProfilePictures
         
         // Save object (following function will save the object in Parse asynchronously)
-        post.saveInBackgroundWithBlock(completion)
+        post.saveInBackground(block: completion)
     }
     
     /**
@@ -71,7 +71,7 @@ class Post: NSObject {
      
      - returns: PFFile for the the data in the image
      */
-    class func getPFFileFromImage(image: UIImage?) -> PFFile? {
+    class func getPFFileFromImage(_ image: UIImage?) -> PFFile? {
         // check if image is not nil
         if let image = image {
             // get image data and check if that is not nil

@@ -10,7 +10,7 @@ import Foundation
 
 class CommentAid {
     
-    static func getLatestComment(storage: [[String]]) -> (username: String, timestamp: String, comment: String) {
+    static func getLatestComment(_ storage: [[String]]) -> (username: String, timestamp: String, comment: String) {
         
         let lastComment = storage[storage.count - 1] //The last post is the latest
         let username = lastComment[0]
@@ -20,7 +20,7 @@ class CommentAid {
         return (username, timestamp, comment)
     }
     
-    static func unpackCommentArray(storage: [[String]]) -> (usernames: [String], timestamps: [String], comments: [String]) {
+    static func unpackCommentArray(_ storage: [[String]]) -> (usernames: [String], timestamps: [String], comments: [String]) {
         var usernames = [String]()
         var timestamps = [String]()
         var comments = [String]()
@@ -33,7 +33,7 @@ class CommentAid {
         return (usernames, timestamps, comments)
     }
     
-    static func repackCommentArray(usernames: [String], timestamps: [String], comments: [String]) -> [[String]] {
+    static func repackCommentArray(_ usernames: [String], timestamps: [String], comments: [String]) -> [[String]] {
         var storage = [[String]]()
         for index in 0 ..< usernames.count {
             storage.append( [usernames[index], timestamps[index], comments[index]] )

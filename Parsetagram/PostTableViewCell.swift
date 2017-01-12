@@ -42,13 +42,13 @@ class PostTableViewCell: UITableViewCell {
         clockImageView.image = UIImage(named: "daysagopng")
     }
 
-    @IBAction func onLike(sender: AnyObject) {
+    @IBAction func onLike(_ sender: AnyObject) {
         //Only allow user to like once -- UPGRADE to be able to unlike!
         if !liked {
             let post = UserInstance.HOME_VIEW_POSTS[sender.tag]
             //Update the post object
             post.incrementKey("likesCount")
-            post.saveInBackgroundWithBlock { (success: Bool, error: NSError?) in
+            post.saveInBackground { (success, error) in
                 self.likesLabel.text = "\(post["likesCount"]) Likes"
                 self.likesLabel.textColor = UIColor(colorLiteralRed: 13.0/255.0, green: 133.0/237.0, blue: 237.0/255.0, alpha: 1.0)
                 self.likeButton.imageView?.image = UIImage(named: "favoritesclickedpng")
@@ -57,20 +57,20 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func onComment(sender: AnyObject) {
+    @IBAction func onComment(_ sender: AnyObject) {
         self.commentButton.imageView?.image = UIImage(named: "commentsclickedpng")
         print("By: PostTableViewCell.swift \n --------> comments clicked")
     }
     
-    @IBAction func onShare(sender: AnyObject) {
+    @IBAction func onShare(_ sender: AnyObject) {
         
     }
     
-    @IBAction func onImageClick(sender: AnyObject) {
+    @IBAction func onImageClick(_ sender: AnyObject) {
         
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

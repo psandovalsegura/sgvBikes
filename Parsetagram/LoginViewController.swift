@@ -25,13 +25,30 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onSignIn(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
+    @IBAction func onSignIn(_ sender: AnyObject) {
+        PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!, block: {(user, error) in
             if user != nil {
                 print("By: LoginViewController.swift \n --------> Login success.")
                 UserInstance.loadUser(user!)
                 //Manually segue
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                //Animate an alert for ERROR
+                if let errorString = error.debugDescription as? String {
+                    self.errorAlert(errorString)
+                } else {
+                    self.errorAlert("Something went wrong...")
+                }
+                
+            }
+        })
+        /*
+        PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                print("By: LoginViewController.swift \n --------> Login success.")
+                UserInstance.loadUser(user!)
+                //Manually segue
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 //Animate an alert for ERROR
                 if let errorString = error!.userInfo["error"] as? String {
@@ -41,50 +58,50 @@ class LoginViewController: UIViewController {
                 }
                 
             }
-        }
+        }*/
         
     }
     
-    @IBAction func onSignUp(sender: AnyObject) {
+    @IBAction func onSignUp(_ sender: AnyObject) {
         let newUser = PFUser()
         newUser.username = usernameField.text
         newUser.password = passwordField.text
-        
-        newUser.signUpInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
+        newUser.signUpInBackground { (success, error) in
             if success {
                 print("By: LoginViewController.swift \n --------> Created a user!")
                 //Manually segue
-                self.performSegueWithIdentifier("loginSegue", sender: nil)
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
                 UserInstance.createUser(newUser)
             } else {
                 //Animate an alert for ERROR
-                if let errorString = error!.userInfo["error"] as? String {
+                if let errorString = error.debugDescription as? String {
                     self.errorAlert(errorString)
                 } else {
                     self.errorAlert("Something went wrong...")
                 }
                 
                 /*
-                print(error?.localizedDescription)
-                print("Error code: \(error?.code)")
-                if error?.code == 202 {                     //Modify this snippet to produce better alerts
-                    print("Username is taken")
-                }*/
+                 print(error?.localizedDescription)
+                 print("Error code: \(error?.code)")
+                 if error?.code == 202 {                     //Modify this snippet to produce better alerts
+                 print("Username is taken")
+                 }*/
             }
+
         }
     }
     
-    @IBAction func onTap(sender: AnyObject) {
+    @IBAction func onTap(_ sender: AnyObject) {
         view.endEditing(true)
     }
 
-    func errorAlert(errorString: String) {
-        let alertController = UIAlertController(title:"Error",  message: errorString, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title:"OK", style: .Cancel) { (action) in
+    func errorAlert(_ errorString: String) {
+        let alertController = UIAlertController(title:"Error",  message: errorString, preferredStyle: .alert)
+        let okAction = UIAlertAction(title:"OK", style: .cancel) { (action) in
             //code is run when user chooses cancel
         }
         alertController.addAction(okAction)
-        self.presentViewController(alertController, animated: true) {
+        self.present(alertController, animated: true) {
             //optional code that is run after the alert has finished presenting
         }
     }

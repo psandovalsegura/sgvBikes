@@ -29,8 +29,7 @@ class PostDetailViewController: UIViewController {
             
             let postImagePFFile = postImage as! PFFile
             //If the image could be attained, then likely the comments, likes, caption, etc. as well
-            postImagePFFile.getDataInBackgroundWithBlock({
-                (imageData: NSData?, error: NSError?) -> Void in
+            postImagePFFile.getDataInBackground(block: { (imageData, error) in
                 if error == nil {
                     if let imageData = imageData {
                         let image = UIImage(data: imageData)
@@ -38,6 +37,7 @@ class PostDetailViewController: UIViewController {
                     }
                 }
             })
+            
             //Get the author
             usernameLabel.text = "@ \((post["username"] as? String)!)"
             
