@@ -29,6 +29,11 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var smallerUsernameLabel: UILabel!
     
+    @IBOutlet weak var favoritesImageView: UIImageView!
+    @IBOutlet weak var commentsImageView: UIImageView!
+    @IBOutlet weak var shareImageView: UIImageView!
+    
+    
     var liked = false
     
     override func awakeFromNib() {
@@ -49,16 +54,16 @@ class PostTableViewCell: UITableViewCell {
             //Update the post object
             post.incrementKey("likesCount")
             post.saveInBackground { (success, error) in
-                self.likesLabel.text = "\(post["likesCount"]) Likes"
+                self.likesLabel.text = "\(post["likesCount"]!) Likes"
                 self.likesLabel.textColor = UIColor(colorLiteralRed: 13.0/255.0, green: 133.0/237.0, blue: 237.0/255.0, alpha: 1.0)
-                self.likeButton.imageView?.image = UIImage(named: "favoritesclickedpng")
+                self.favoritesImageView.image = UIImage(named: "favoritesclickedpng")
             }
             self.liked = true
         }
     }
     
     @IBAction func onComment(_ sender: AnyObject) {
-        self.commentButton.imageView?.image = UIImage(named: "commentsclickedpng")
+        self.commentsImageView.image = UIImage(named: "commentsclickedpng")
         print("By: PostTableViewCell.swift \n --------> comments clicked")
     }
     

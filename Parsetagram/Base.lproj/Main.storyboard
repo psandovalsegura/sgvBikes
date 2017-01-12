@@ -183,6 +183,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="523" id="bHL-Rt-Au5" customClass="PostTableViewCell" customModule="Parsetagram" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="523"/>
@@ -216,7 +217,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="96v-qT-1H4">
-                                                            <rect key="frame" x="310" y="5" width="25" height="25"/>
+                                                            <rect key="frame" x="310" y="6" width="22" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -229,7 +230,7 @@
                                                             <rect key="frame" x="0.0" y="-7" width="127" height="48.5"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <inset key="contentEdgeInsets" minX="-46" minY="-7" maxX="0.0" maxY="0.0"/>
-                                                            <state key="normal" image="favoritespng">
+                                                            <state key="normal">
                                                                 <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <connections>
@@ -241,7 +242,6 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Semibold" family="San Francisco Text" pointSize="15"/>
                                                             <inset key="contentEdgeInsets" minX="-24" minY="-5" maxX="0.0" maxY="0.0"/>
-                                                            <state key="normal" image="commentspng"/>
                                                             <connections>
                                                                 <action selector="onComment:" destination="bHL-Rt-Au5" eventType="touchUpInside" id="Thk-oV-Ri4"/>
                                                                 <segue destination="HOC-7B-51S" kind="show" identifier="toCommentsView" id="i6Z-7S-gzE"/>
@@ -251,7 +251,6 @@
                                                             <rect key="frame" x="276" y="-7" width="99" height="48"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <inset key="contentEdgeInsets" minX="0.0" minY="-7" maxX="0.0" maxY="0.0"/>
-                                                            <state key="normal" image="sharepng"/>
                                                             <connections>
                                                                 <action selector="onShare:" destination="bHL-Rt-Au5" eventType="touchUpInside" id="t4t-8O-fxW"/>
                                                             </connections>
@@ -259,7 +258,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="#" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYT-eP-oHX">
                                                             <rect key="frame" x="206" y="-4" width="62" height="33"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="____________________________________________________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1S-2f-CvS">
@@ -281,7 +280,7 @@
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-kG-PMb">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-kG-PMb">
                                                             <rect key="frame" x="8" y="36" width="91" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="14"/>
@@ -294,13 +293,25 @@
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Light" family="San Francisco Text" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXr-8E-oMV" userLabel="Latest Commenter Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXr-8E-oMV" userLabel="Latest Commenter Label">
                                                             <rect key="frame" x="8" y="54" width="91" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="favoritespng" translatesAutoresizingMaskIntoConstraints="NO" id="1Ki-wy-rZZ">
+                                                            <rect key="frame" x="15" y="-1" width="27" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="commentspng" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-Fb-3JC">
+                                                            <rect key="frame" x="171" y="-1" width="27" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sharepng" translatesAutoresizingMaskIntoConstraints="NO" id="U59-3b-6Pv">
+                                                            <rect key="frame" x="312" y="-1" width="27" height="27"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
@@ -319,7 +330,9 @@
                                             <outlet property="clockImageView" destination="96v-qT-1H4" id="q6j-4a-vMA"/>
                                             <outlet property="commentButton" destination="dWM-Ij-BFR" id="YtM-Jn-u4i"/>
                                             <outlet property="commentsCountLabel" destination="KYT-eP-oHX" id="p2S-hK-vSp"/>
+                                            <outlet property="commentsImageView" destination="g2G-Fb-3JC" id="ODm-e0-igF"/>
                                             <outlet property="daysAgoLabel" destination="8sR-Tt-NMf" id="pQB-hL-m8D"/>
+                                            <outlet property="favoritesImageView" destination="1Ki-wy-rZZ" id="GXg-3v-zHF"/>
                                             <outlet property="imageButton" destination="TdF-v3-Rnn" id="MoQ-mT-nuR"/>
                                             <outlet property="latestCommenterUsername" destination="uXr-8E-oMV" id="wTx-MT-GaF"/>
                                             <outlet property="latestCommentsLabel" destination="P5f-eJ-vWL" id="FMe-e6-8ap"/>
@@ -328,6 +341,7 @@
                                             <outlet property="postImageView" destination="SE5-FC-V6f" id="nfs-5B-Hpy"/>
                                             <outlet property="profilePictureView" destination="UtI-Kw-skd" id="o3C-cr-b7F"/>
                                             <outlet property="shareButton" destination="Iga-M8-HPc" id="OM8-ZL-j05"/>
+                                            <outlet property="shareImageView" destination="U59-3b-6Pv" id="hWK-nQ-aDd"/>
                                             <outlet property="smallerUsernameLabel" destination="vSV-kG-PMb" id="7wh-m9-Viw"/>
                                             <outlet property="usernameLabel" destination="DuA-Fu-3OM" id="gAZ-nZ-GQE"/>
                                         </connections>
@@ -631,7 +645,7 @@
                                                     <rect key="frame" x="1" y="269" width="113" height="31.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <inset key="contentEdgeInsets" minX="-61" minY="-7" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" image="favoritespng">
+                                                    <state key="normal">
                                                         <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                 </button>
@@ -646,7 +660,6 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoText-Semibold" family="San Francisco Text" pointSize="15"/>
                                                     <inset key="contentEdgeInsets" minX="-24" minY="-5" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" image="commentspng"/>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -875,6 +888,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="mip-qK-Cvk"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Vb3-4U-ofN">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
@@ -1159,13 +1173,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camerapng" width="30" height="24"/>
-        <image name="commentspng" width="25" height="23"/>
-        <image name="favoritespng" width="30" height="26"/>
-        <image name="feed2png" width="30" height="30"/>
-        <image name="mepng" width="30" height="28"/>
+        <image name="camerapng" width="24" height="24"/>
+        <image name="commentspng" width="120" height="120"/>
+        <image name="favoritespng" width="120" height="120"/>
+        <image name="feed2png" width="24" height="24"/>
+        <image name="mepng" width="24" height="24"/>
         <image name="settingspng" width="30" height="28"/>
-        <image name="sharepng" width="25" height="24"/>
+        <image name="sharepng" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1ZO-t5-XaX"/>

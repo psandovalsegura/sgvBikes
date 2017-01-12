@@ -52,7 +52,7 @@ class PostDetailViewController: UIViewController {
             if likesCount == 1 {
                 likesLabel.text = "1 Like"
             } else {
-                likesLabel.text = "\(post["likesCount"]) Likes"
+                likesLabel.text = "\(likesCount) Likes"
             }
             
             

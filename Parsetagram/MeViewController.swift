@@ -154,9 +154,9 @@ class MeViewController: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewWillAppear(true)
         // Set the username label
         //UserInstance.loadUserProperties()
-        usernameLabel.text = "@ \(UserInstance.USERNAME)"
-        postCountLabel.text = "\(UserInstance.POSTS_COUNT) Posts"
-        joinDateLabel.text = "Joined \(TimeAid.getReadableDateFromFormat(UserInstance.JOIN_DATE))"
+        usernameLabel.text = "@ \(UserInstance.USERNAME!)"
+        postCountLabel.text = "\(UserInstance.POSTS_COUNT!) Posts"
+        joinDateLabel.text = "Joined \(TimeAid.getReadableDateFromFormat(UserInstance.JOIN_DATE!))"
         loadPostData("viewWillAppear" as AnyObject)
     }
 
