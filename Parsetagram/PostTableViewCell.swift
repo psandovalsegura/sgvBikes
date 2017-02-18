@@ -43,8 +43,8 @@ class PostTableViewCell: UITableViewCell {
         self.profilePictureView.layer.cornerRadius = self.profilePictureView.frame.size.width / 2
         profilePictureView.clipsToBounds = true
         
-        //Set up the clock picture
-        clockImageView.image = UIImage(named: "daysagopng")
+        //TODO: Set up the clock picture
+        
     }
 
     @IBAction func onLike(_ sender: AnyObject) {
