@@ -96,8 +96,8 @@ class LoginViewController: UIViewController {
     }
 
     func errorAlert(_ errorString: String) {
-        let alertController = UIAlertController(title:"Error",  message: errorString, preferredStyle: .alert)
-        let okAction = UIAlertAction(title:"OK", style: .cancel) { (action) in
+        let alertController = UIAlertController(title: "Error",  message: errorString, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
             //code is run when user chooses cancel
         }
         alertController.addAction(okAction)

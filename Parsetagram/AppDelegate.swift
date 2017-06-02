@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // clientKey is not used on Parse open source unless explicitly configured
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
-                configuration.applicationId = "parsetagram"
-                configuration.clientKey = "9m3nui3039lamFFGAJnaje73b2i2laai"  // set to nil assuming you have not set clientKey
-                configuration.server = "https://serene-river-11975.herokuapp.com/parse"
+                configuration.applicationId = "svgbikes"
+                configuration.clientKey = "com.sandoval.Parsetagram"  // set to nil assuming you have not set clientKey
+                configuration.server = "http://fathomless-journey-79850.herokuapp.com/parse"
             })
         )
         

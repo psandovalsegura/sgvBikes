@@ -72,7 +72,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.050980392159999999" green="0.52156862749999999" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sandoval Software 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5A-dE-zeW" userLabel="SandovalSoftwareLabel">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Harvey Mudd College 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5A-dE-zeW" userLabel="SandovalSoftwareLabel">
                                         <rect key="frame" x="4" y="181" width="367" height="38"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="14"/>
@@ -166,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="464.80000000000001" y="520.38980509745136"/>
         </scene>
-        <!--Parsetagram-->
+        <!--SGV Bikes-->
         <scene sceneID="meW-j5-1BJ">
             <objects>
                 <viewController storyboardIdentifier="homeView" id="Z5r-Dr-etb" customClass="HomeViewController" customModule="Parsetagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -346,7 +346,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Parsetagram" id="rCm-2U-d7C"/>
+                    <navigationItem key="navigationItem" title="SGV Bikes" id="rCm-2U-d7C"/>
                     <connections>
                         <outlet property="tableView" destination="u4r-rb-eyw" id="ONT-sy-sDe"/>
                     </connections>
@@ -1134,7 +1134,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2zF-pl-6XI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" image="feed2png" id="YXG-wq-yFe"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TVd-HF-nkZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TVd-HF-nkZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1153,7 +1153,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kdw-QK-Cws" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Me" image="mepng" id="Den-5E-uio"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cdF-bb-fgU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cdF-bb-fgU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
