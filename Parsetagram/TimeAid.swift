@@ -74,19 +74,19 @@ class TimeAid {
                     } else if secondCount == 1 {
                         return "1 second ago"
                     } else {
-                        return "\(secondCount) seconds ago"
+                        return "\(secondCount!) seconds ago"
                     }
                     
                 } else if minuteCount == 1 {
                     return "1 minute ago"
                 } else {
-                    return "\(minuteCount) minutes ago"
+                    return "\(minuteCount!) minutes ago"
                 }
                 
             } else if hourCount == 1 {
                 return "1 hour ago"
             } else {
-                return "\(hourCount) hours ago"
+                return "\(hourCount!) hours ago"
             }
             
         } else if dayCount == 1 {

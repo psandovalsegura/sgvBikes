@@ -61,7 +61,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.imageButton.tag = indexPath.row
         cell.likeButton.tag = indexPath.row
         cell.commentButton.tag = indexPath.row
-        cell.shareButton.tag = indexPath.row
         
         let post = self.posts[indexPath.row]
         
@@ -207,10 +206,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //Stop refesh control
             self.refreshControl.endRefreshing()
         }
-        
-        /*for number in 0 ..< 1000000 { //Slow the app
-            print(number)
-        }*/
         
     }
         // The getObjectInBackgroundWithId methods are asynchronous, so any code after this will run
