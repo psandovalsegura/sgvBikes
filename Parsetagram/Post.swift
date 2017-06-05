@@ -21,7 +21,7 @@ class Post: NSObject {
      - parameter caption: Caption text input by the user
      - parameter completion: Block to be executed after save operation is complete
      */
-    class func postUserImage(_ image: UIImage?, withCaption caption: String?, withCompletion completion: PFBooleanResultBlock?) {
+    class func postUserImage(_ image: UIImage?, withCaption caption: String?, latitude: String, longitude: String, withCompletion completion: PFBooleanResultBlock?) {
         // Create Parse object PFObject
         let post = PFObject(className: "Post")
         
@@ -31,6 +31,8 @@ class Post: NSObject {
         post["caption"] = caption
         post["likesCount"] = 0
         post["commentsCount"] = 0
+        post["latitude"] = latitude
+        post["longitude"] = longitude
         
         //Add username
         let usernameString = (post["author"] as AnyObject).username!!

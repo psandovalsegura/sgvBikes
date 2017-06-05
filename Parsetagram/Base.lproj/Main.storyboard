@@ -513,6 +513,20 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyO-rG-Kdh">
+                                        <rect key="frame" x="8" y="44" width="119" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfa-hk-Ozg">
+                                        <rect key="frame" x="150" y="44" width="119" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.71372549019607845" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -541,7 +555,9 @@
                         <outlet property="dateTakenLabel" destination="zpk-mi-v3G" id="gEP-4R-gkh"/>
                         <outlet property="daysAgoLabel" destination="3hk-4L-vQT" id="5de-Ya-SOW"/>
                         <outlet property="imageView" destination="lAt-9r-fyu" id="9Zf-LY-Ozh"/>
+                        <outlet property="latitudeLabel" destination="WyO-rG-Kdh" id="aoz-wd-9dB"/>
                         <outlet property="likesLabel" destination="xY9-5t-qJp" id="jeX-aO-N6Z"/>
+                        <outlet property="longitudeLabel" destination="xfa-hk-Ozg" id="eBu-cx-QD8"/>
                         <outlet property="usernameLabel" destination="ABq-9g-vW2" id="TF8-jL-MGI"/>
                     </connections>
                 </viewController>

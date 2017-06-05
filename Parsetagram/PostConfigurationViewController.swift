@@ -42,7 +42,7 @@ class PostConfigurationViewController: UIViewController {
         
         //Resize image in preparation for upload
         let resizedImage = resize(self.imageTaken, newSize: CGSize(width: IMAGE_VIEW_WIDTH, height: IMAGE_VIEW_HEIGHT))
-        Post.postUserImage(resizedImage, withCaption: captionField.text) { (success, error) in
+        Post.postUserImage(resizedImage, withCaption: captionField.text, latitude: String(coordinates.latitude), longitude: String(coordinates.longitude)) { (success, error) in
             ///End progress HUD
             MBProgressHUD.hide(for: self.view, animated: true)
         }

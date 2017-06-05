@@ -19,16 +19,17 @@ class PostDetailViewController: UIViewController {
     @IBOutlet weak var daysAgoLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-    
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Set up all of the outlets
+        // Set up all of the outlets
         if let postImage = post["media"] {
             
             let postImagePFFile = postImage as! PFFile
-            //If the image could be attained, then likely the comments, likes, caption, etc. as well
+            // If the image could be attained, then likely the comments, likes, caption, etc. as well
             postImagePFFile.getDataInBackground(block: { (imageData, error) in
                 if error == nil {
                     if let imageData = imageData {
@@ -38,16 +39,16 @@ class PostDetailViewController: UIViewController {
                 }
             })
             
-            //Get the author
+            // Get the author
             usernameLabel.text = "@ \((post["username"] as? String)!)"
             
-            //Get date taken
+            // Get date taken
             dateTakenLabel.text = TimeAid.getReadableDateFromFormat(post["formattedDateString"] as! String)
             
-            //Get days ago
+            // Get days ago
             daysAgoLabel.text = TimeAid.getTimeDifferencePhrase(post["formattedDateString"] as! String)
             
-            //Get the likes count
+            // Get the likes count
             let likesCount = post["likesCount"] as! Int
             if likesCount == 1 {
                 likesLabel.text = "1 Like"
@@ -56,8 +57,12 @@ class PostDetailViewController: UIViewController {
             }
             
             
-            //Get the caption
+            // Get the caption
             captionLabel.text = post["caption"] as? String
+            
+            // Get the coordinates of the image
+            latitudeLabel.text = post["latitude"] as? String
+            longitudeLabel.text = post["longitude"] as? String
             
         } else {
             usernameLabel.text = "Error..."
