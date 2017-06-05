@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     let imagePickerController = UIImagePickerController()
     var imageTaken: UIImage = UIImage()
+    var mostRecentLocation: CLLocationCoordinate2D!
+    var locationManager: CLLocationManager!
     
 
     override func viewDidLoad() {
@@ -20,6 +23,16 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true
+        
+        // Initialize location manager
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
+        
         getPictureFromCamera(true) //The first time the user selects the camera, they will be prompted with the ability to take a photo
     }
     
@@ -63,9 +76,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.present(imagePickerController, animated: true, completion: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue: CLLocationCoordinate2D = manager.location!.coordinate
+        self.mostRecentLocation = locValue
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Did location updates is called but failed getting location \(error)")
+    }
+    
+    // Method will be called each time when a user change his location access preference.
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            print("User allowed us to access location")
+            //do whatever init activities here.
+        }
     }
     
     //Use code below if deciding to segue to new view controller
@@ -73,7 +99,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let postConfigurationViewController = segue.destination as! PostConfigurationViewController
         postConfigurationViewController.imageTaken = self.imageTaken
-        
+        postConfigurationViewController.coordinates = self.mostRecentLocation
+        print("Segue with \(self.mostRecentLocation.latitude), \(self.mostRecentLocation.longitude)")
     }
     
 

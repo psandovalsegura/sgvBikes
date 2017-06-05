@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4CEF783643CE61CAECEBA85A /* Pods_ParsetagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5A7626C7D280A72765CB4B /* Pods_ParsetagramUITests.framework */; };
+		81F79F151EE4EBF200D1FFE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F79F141EE4EBF200D1FFE6 /* CoreLocation.framework */; };
+		81F79F171EE4EBF800D1FFE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F79F161EE4EBF800D1FFE6 /* MapKit.framework */; };
 		9B313F121D1A34F700F99561 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */; };
 		9B313F191D1A4D1500F99561 /* TimeAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F181D1A4D1500F99561 /* TimeAid.swift */; };
 		9B313F1B1D1AE3C900F99561 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B313F1A1D1AE3C900F99561 /* SettingsViewController.swift */; };
@@ -61,6 +63,8 @@
 		4421348EFED4774231C8ED39 /* Pods-ParsetagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsetagramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParsetagramUITests/Pods-ParsetagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		63EF1E35136D13006C2855B6 /* Pods-Parsetagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parsetagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parsetagram/Pods-Parsetagram.release.xcconfig"; sourceTree = "<group>"; };
 		6556373A395946CC9C72CE84 /* Pods-Parsetagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parsetagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parsetagram/Pods-Parsetagram.debug.xcconfig"; sourceTree = "<group>"; };
+		81F79F141EE4EBF200D1FFE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		81F79F161EE4EBF800D1FFE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8EE1C82B97D72A8D85C8D3DF /* Pods-ParsetagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParsetagramUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParsetagramUITests/Pods-ParsetagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B313F111D1A34F700F99561 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 		9B313F181D1A4D1500F99561 /* TimeAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAid.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81F79F171EE4EBF800D1FFE6 /* MapKit.framework in Frameworks */,
+				81F79F151EE4EBF200D1FFE6 /* CoreLocation.framework in Frameworks */,
 				F6F8A2E5D0020A8DC4D7F5E1 /* Pods_Parsetagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +272,8 @@
 		E9772A462AD042E3E246CADA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81F79F161EE4EBF800D1FFE6 /* MapKit.framework */,
+				81F79F141EE4EBF200D1FFE6 /* CoreLocation.framework */,
 				FE23D70F1BA9E6AFEA6703C1 /* Pods_Parsetagram.framework */,
 				E1C3668DB4110BEEE312B950 /* Pods_ParsetagramTests.framework */,
 				0F5A7626C7D280A72765CB4B /* Pods_ParsetagramUITests.framework */,

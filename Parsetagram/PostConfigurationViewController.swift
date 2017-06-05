@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import MBProgressHUD
+import CoreLocation
 
 class PostConfigurationViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class PostConfigurationViewController: UIViewController {
     @IBOutlet weak var captionField: UITextField!
     
     var imageTaken: UIImage!
+    var coordinates: CLLocationCoordinate2D!
     
     //Constants for use in resizing image
     let IMAGE_VIEW_WIDTH = 335
