@@ -9,6 +9,7 @@ target 'Parsetagram' do
   # Pods for Parsetagram
     pod 'Parse'
     pod 'MBProgressHUD'
+    pod 'GoogleMaps'
 
   target 'ParsetagramTests' do
     inherit! :search_paths
