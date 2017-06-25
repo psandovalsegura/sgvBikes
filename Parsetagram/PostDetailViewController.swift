@@ -8,14 +8,15 @@
 
 import UIKit
 import Parse
+import GoogleMaps
 
 class PostDetailViewController: UIViewController {
     
     var post: PFObject!
 
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var dateTakenLabel: UILabel!
+    @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var daysAgoLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
@@ -28,16 +29,17 @@ class PostDetailViewController: UIViewController {
         // Set up all of the outlets
         if let postImage = post["media"] {
             
-            let postImagePFFile = postImage as! PFFile
+//            let postImagePFFile = postImage as! PFFile
             // If the image could be attained, then likely the comments, likes, caption, etc. as well
-            postImagePFFile.getDataInBackground(block: { (imageData, error) in
-                if error == nil {
-                    if let imageData = imageData {
-                        let image = UIImage(data: imageData)
-                        self.imageView.image = image
-                    }
-                }
-            })
+//            postImagePFFile.getDataInBackground(block: { (imageData, error) in
+//                if error == nil {
+//                    if let imageData = imageData {
+//                        let image = UIImage(data: imageData)
+//                        self.imageView.image = image
+//                    }
+//                }
+//            })
+            setupMapView()
             
             // Get the author
             usernameLabel.text = "@ \((post["username"] as? String)!)"
@@ -67,11 +69,30 @@ class PostDetailViewController: UIViewController {
         } else {
             usernameLabel.text = "Error..."
         }
-
+        
         
         // Do any additional setup after loading the view.
     }
+    
+    func setupMapView(){
+        
+        let lat = post["latitude"] as? String
 
+        let latitude = Double(lat!)
+        let long = post["longitude"] as? String
+        let longitude = Double(long!)
+        
+        let camera = GMSCameraPosition.camera(withLatitude: latitude!, longitude: longitude!, zoom: 16.0)
+        mapView.camera = camera
+        
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: latitude!, longitude: longitude!)
+        marker.title = "test"
+        marker.snippet = "testing"
+        marker.map = mapView
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

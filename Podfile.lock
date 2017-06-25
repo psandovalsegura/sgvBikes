@@ -1,18 +1,25 @@
 PODS:
   - Bolts/Tasks (1.7.0)
+  - GoogleMaps (2.3.0):
+    - GoogleMaps/Maps (= 2.3.0)
+  - GoogleMaps/Base (2.3.0)
+  - GoogleMaps/Maps (2.3.0):
+    - GoogleMaps/Base
   - MBProgressHUD (0.9.2)
   - Parse (1.13.0):
     - Bolts/Tasks (~> 1.6)
 
 DEPENDENCIES:
+  - GoogleMaps
   - MBProgressHUD
   - Parse
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
 
-PODFILE CHECKSUM: 8f6fcb3db6f2bdb5d5a1accbbd1ac4482670857f
+PODFILE CHECKSUM: 2425e48f31b2b5584ad79445f5aee9a3f6c12cf6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0

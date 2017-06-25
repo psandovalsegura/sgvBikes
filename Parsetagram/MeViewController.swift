@@ -9,156 +9,82 @@
 import UIKit
 import Parse
 import MBProgressHUD
+import GoogleMaps
 
-class MeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MeViewController: UIViewController, CLLocationManagerDelegate {
 
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var postCountLabel: UILabel!
-    @IBOutlet weak var joinDateLabel: UILabel!
-    @IBOutlet weak var followingCountLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
     
-    var refreshControl = UIRefreshControl()
     var myPosts = [PFObject]()
+    var mostRecentLocation: CLLocationCoordinate2D!
+        
+    
+    @IBOutlet weak var mapView: GMSMapView!
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Set up the table view
-        tableView.dataSource = self
-        tableView.delegate = self
+        myPosts = UserInstance.HOME_VIEW_POSTS
         
-        //Initially load data
-        self.loadPostData("initial" as AnyObject)
         
-        refreshControl.addTarget(self, action: #selector(loadPostData(_:)), for: UIControlEvents.valueChanged)
-        refreshControl.backgroundColor = UIColor.clear
-        refreshControl.tintColor = UIColor.black
-        refreshControl.attributedTitle = NSAttributedString(string: "Last updated on \(TimeAid.getTimestamp())", attributes: [NSForegroundColorAttributeName: UIColor.black])
-        tableView.insertSubview(refreshControl, at: 0)
-        loadPostData("viewDidLoad" as AnyObject)
-        /*
-        print(UserInstance.USERNAME)
-        print(UserInstance.FOLLWER_COUNT)
-        print(UserInstance.JOIN_DATE)
-        print(UserInstance.POSTS_COUNT)*/
-    }
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            setupMapView()
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.myPosts.count
+        }
+        
+        
+        
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
+    func setupMapView(){
         
-        let post = self.myPosts[indexPath.row]
+        mapView.isMyLocationEnabled = true
         
-        //Populate the custom table cell
-        if let postImage = post["media"] {
+        for post in myPosts{
             
-            let postImagePFFile = postImage as! PFFile
-            //If the image could be attained, then likely the comments, likes, caption, etc. as well
-            postImagePFFile.getDataInBackground(block: {
-                (imageData, error) in
-                if error == nil {
-                    if let imageData = imageData {
-                        let image = UIImage(data:imageData)
-                        cell.postImageView.image = image
-                    }
-                }
-            })
+            let lat = post["latitude"] as! String
+            let latitude = Double(lat)
+            let long = post["longitude"] as! String
+            let longitude = Double(long)
             
-            //Get the caption
-            cell.captionLabel.text = post["caption"] as? String
-            
-            //Get the likes count
-            cell.likesLabel.text = "\(post["likesCount"]) Likes"
-            
-            //Get the comments count
-            cell.commentsCountLabel.text = "\(post["commentsCount"])"
-            
-            //Get the author
-            cell.usernameLabel.text = post["username"] as? String
-            
-            //Get the profile picture
-            if let profileImage = post["associatedProfilePicture"] {
-                
-                let postImagePFFile = profileImage as! PFFile
-                
-                postImagePFFile.getDataInBackground(block: {
-                    (imageData, error) in
-                    if error == nil {
-                        if let imageData = imageData {
-                            let image = UIImage(data:imageData)
-                            cell.profilePictureView.image = image
-                        }
-                    }
-                })
-                
-            }
-            
-            //Get amount of days ago
-            cell.daysAgoLabel.text = TimeAid.getFeedTimeDifference((post["formattedDateString"] as! String))
-            
+            let marker = GMSMarker(position: CLLocationCoordinate2DMake(latitude!, longitude!))
+            marker.map = mapView
         }
         
-        return cell
     }
     
-    func loadPostData(_ point: AnyObject) {
-        //ProgressHUD initialized
-        if (String(describing: point) == "initial") {
-            // Display HUD right before the request is made
-            print("By: MeViewController.swift \n --------> initial request to load")
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-        }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue: CLLocationCoordinate2D = manager.location!.coordinate
+        self.mostRecentLocation = locValue
+//        print(locValue)
+        let camera = GMSCameraPosition.camera(withLatitude: (locValue.latitude), longitude: (locValue.longitude), zoom: 11.0)
         
-        let query = PFQuery(className: "Post")
-        query.order(byDescending: "createdAt")
-        query.whereKey("username", equalTo: PFUser.current()!.username!)
-        //query.whereKey("_p_author", equalTo: <#T##AnyObject#>) //try this query for safety in better release
-        
-        query.findObjectsInBackground { (objects, error) in
-            if error == nil {
-                
-                //print("successfully retreived")
-                
-                if let objects = objects {
-                    self.myPosts = objects
-                    self.tableView.reloadData()
-                }
-                
-            } else {
-                //print("there was an error")
-            }
-        }
-        
-        //Stop refesh control
-        self.refreshControl.endRefreshing()
-        
-        /*for number in 0 ..< 1000000 { //Slow the app
-         print(number)
-         }*/
-        
-        if (String(describing: point) == "initial") {
-            // Hide HUD once the network request comes back (must be done on main UI thread)
-            MBProgressHUD.hide(for: self.view, animated: true)
-            print("By: MeViewController.swift \n --------> end initial request to load")
-        }
-    }
+        mapView.animate(to: camera)
 
-    
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        // Set the username label
-        //UserInstance.loadUserProperties()
-        usernameLabel.text = "@ \(UserInstance.USERNAME!)"
-        postCountLabel.text = "\(UserInstance.POSTS_COUNT!) Posts"
-        joinDateLabel.text = "Joined \(TimeAid.getReadableDateFromFormat(UserInstance.JOIN_DATE!))"
-        loadPostData("viewWillAppear" as AnyObject)
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        self.locationManager.stopUpdatingLocation()
     }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Did location updates is called but failed getting location \(error)")
+    }
+    
+    // Method will be called each time when a user change his location access preference.
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            print("User allowed us to access location")
+            //do whatever init activities here.
+        }
+    }
+    
+    
+    
 
     /*
     // MARK: - Navigation

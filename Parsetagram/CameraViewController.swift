@@ -79,6 +79,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue: CLLocationCoordinate2D = manager.location!.coordinate
         self.mostRecentLocation = locValue
+        
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     

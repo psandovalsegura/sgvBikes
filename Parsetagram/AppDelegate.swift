@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("By: AppDelegate.swift \n --------> User still logged in.")
             UserInstance.loadUser(PFUser.current()!)
         }
+        
+        GMSServices.provideAPIKey("AIzaSyCOzpPnHzy0Ihq6YNpN_aIF6z7wd0bcIpQ")
         
         return true
     }
