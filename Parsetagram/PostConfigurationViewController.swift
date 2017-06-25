@@ -10,6 +10,7 @@ import UIKit
 import Parse
 import MBProgressHUD
 import CoreLocation
+import SafariServices
 
 class PostConfigurationViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class PostConfigurationViewController: UIViewController {
     
     var imageTaken: UIImage!
     var coordinates: CLLocationCoordinate2D!
+    var safariVC: SFSafariViewController?
+    var surveyPresented = false
     
     //Constants for use in resizing image
     let IMAGE_VIEW_WIDTH = 335
@@ -30,7 +33,17 @@ class PostConfigurationViewController: UIViewController {
         // Do any additional setup after loading the view.
         imageView.image = imageTaken
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Present bike survey for rack
+        if !surveyPresented {
+            self.safariVC = SFSafariViewController(url: SurveyAid.surveyUrl as! URL)
+            self.present(self.safariVC!, animated: true, completion: {
+                self.surveyPresented = true
+            })
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
