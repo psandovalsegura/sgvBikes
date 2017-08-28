@@ -63,8 +63,13 @@ class PostDetailViewController: UIViewController {
             captionLabel.text = post["caption"] as? String
             
             // Get the coordinates of the image
-            latitudeLabel.text = post["latitude"] as? String
-            longitudeLabel.text = post["longitude"] as? String
+            let latitudeString = post["latitude"] as? String
+            let longitudeString = post["longitude"] as? String
+            let latitudeDouble = Double(latitudeString!)!.truncate(places: 4)
+            let longitudeDouble = Double(longitudeString!)!.truncate(places: 4)
+            
+            latitudeLabel.text = String(describing: latitudeDouble)
+            longitudeLabel.text = String(describing: longitudeDouble)
             
         } else {
             usernameLabel.text = "Error..."
