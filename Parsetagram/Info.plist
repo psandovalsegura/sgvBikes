@@ -32,13 +32,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>You can take pictures of bikes.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Location data will be used to pin bike images.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location data will be used to pin bike images.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>You can upload pictures from camera roll.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SanFranciscoDisplay-Regular.otf</string>
